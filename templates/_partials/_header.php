@@ -9,6 +9,7 @@
                 <li><a href="login">Login</a></li>
             <?php else: ?>
                 <li>Hi <?= $_SESSION["user"]["name"]; ?></li>
+                <li><a href="upload">Upload</a></li>
                 <li><a href="logout">Logout</a></li>
             <?php endif; ?>
         </ul>

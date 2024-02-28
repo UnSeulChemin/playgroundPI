@@ -3,4 +3,4 @@
 <h1>Homepagee</h1>
 
 <?php $content = ob_get_clean(); ?>
-<?php require('templates/base.php') ?>
+<?php require_once('templates/base.php') ?>

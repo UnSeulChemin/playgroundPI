@@ -7,6 +7,7 @@ require_once "src/Controllers/HomepageController.php";
 require_once "src/Controllers/RegisterController.php";
 require_once "src/Controllers/LoginController.php";
 require_once "src/Controllers/LogoutController.php";
+require_once "src/Controllers/UploadController.php";
 
 // var_dump($_SESSION["user"]);
 var_dump($_GET);
@@ -39,6 +40,11 @@ try
 		if ($_GET['page'] === "logout" && verifyLoggedUser())
 		{
 			logout();
+		}
+
+		if ($_GET['page'] === "upload" && verifyLoggedUser())
+		{
+			upload();
 		}
 
 		if (!in_array($_GET['page'], $paths["page"]))
