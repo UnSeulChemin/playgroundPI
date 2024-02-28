@@ -56,7 +56,17 @@ try
 
 		if ($_GET['page'] === "contact" && verifyLoggedUser())
 		{
-			contact();
+			if (!empty($_GET['id']))
+			{
+				$getId = $_GET['id'];
+
+				contactId($getId);
+			}
+
+			else
+			{
+				contact();
+			}
 		}
 
 		if (!in_array($_GET['page'], $paths["page"]))

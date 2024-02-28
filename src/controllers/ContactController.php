@@ -3,7 +3,16 @@ require_once "src/models/Contact.php";
 
 function contact()
 {
-	approach();
+	contactUs();
+	$contacts = getContacts();
 
 	require('templates/pages/contact.php');
+}
+
+function contactId(int $getId)
+{
+	// functions
+	$contact = getContact($getId);
+
+	require('templates/pages/contactId.php');
 }

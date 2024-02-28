@@ -1,6 +1,6 @@
 <?php
 
-function approach()
+function contactUs()
 {
     if (!empty($_POST))
     {
@@ -37,4 +37,51 @@ function approach()
             die("Le formulaire est imcomplet");
         }
     }
+}
+
+function getContacts()
+{
+    require_once "src/lib/dbConnect.php";
+    $database = dbConnect();
+
+    $sql = "SELECT * FROM `contacts` ORDER BY `created_at` DESC";
+    $requete = $database->query($sql);
+    
+    $contacts = $requete->fetchAll();
+    return $contacts;
+}
+
+function getContact($getId)
+{
+    // if(isset($_GET['id']) && !empty($_GET['id']))
+
+    // Pour éviter le else si pas d'id.. inveser la condition
+    if(!isset($getId) || empty($getId))
+    {
+        header("Location: contact");
+        exit;
+    }
+
+    $id = $getId;
+
+    require_once "src/lib/dbConnect.php";
+    $database = dbConnect();
+
+    $sql = "SELECT * FROM `contacts` WHERE `id` = :id";
+    $requete = $database->prepare($sql);
+    $requete->bindValue("id", $id, PDO::PARAM_INT);
+    $requete->execute();
+
+    $contact = $requete->fetch();
+    return $contact;
+
+    if (!$contact)
+    {
+        // donne le code d'erreur 404
+        http_response_code(404);
+        echo "contact innexistant";
+        exit;
+    }
+
+    $titre = strip_tags($contact["title"]);
 }
