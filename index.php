@@ -26,17 +26,17 @@ try
 			homepage();
 		}
 
-		if ($_GET['page'] === "register" && verifySessionUser())
+		if ($_GET['page'] === "register" && verifyNotLoggedUser())
 		{
 			register();
 		}
 
-		if ($_GET['page'] === "login" && verifySessionUser())
+		if ($_GET['page'] === "login" && verifyNotLoggedUser())
 		{
 			login();
 		}
 
-		if ($_GET['page'] === "logout")
+		if ($_GET['page'] === "logout" && verifyLoggedUser())
 		{
 			logout();
 		}
