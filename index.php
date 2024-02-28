@@ -8,10 +8,11 @@ require_once "src/Controllers/RegisterController.php";
 require_once "src/Controllers/LoginController.php";
 require_once "src/Controllers/LogoutController.php";
 require_once "src/Controllers/UploadController.php";
+require_once "src/Controllers/ProfileController.php";
 
-// var_dump($_SESSION["user"]);
+// var_dump($_SESSION);
 var_dump($_GET);
-var_dump($paths["page"]);
+// var_dump($paths);
 
 try
 {
@@ -45,6 +46,11 @@ try
 		if ($_GET['page'] === "upload" && verifyLoggedUser())
 		{
 			upload();
+		}
+
+		if ($_GET['page'] === "profile" && verifyLoggedUser())
+		{
+			profile();
 		}
 
 		if (!in_array($_GET['page'], $paths["page"]))

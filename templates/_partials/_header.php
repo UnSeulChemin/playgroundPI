@@ -10,6 +10,7 @@
             <?php else: ?>
                 <li>Hi <?= $_SESSION["user"]["name"]; ?></li>
                 <li><a href="upload">Upload</a></li>
+                <li><a href="profile">Profile</a></li>
                 <li><a href="logout">Logout</a></li>
             <?php endif; ?>
         </ul>

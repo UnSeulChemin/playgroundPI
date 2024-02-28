@@ -1,3 +1,3 @@
 <?php 
 
-$paths["page"] = ["", "register", "login", "logout", "upload"];
+$paths["page"] = ["", "register", "login", "logout", "upload", "profile"];
