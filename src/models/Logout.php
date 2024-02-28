@@ -9,5 +9,5 @@ function disconnection()
     }
 
     unset($_SESSION["user"]);
-    header("Location: index");
+    header("Location: ./");
 }

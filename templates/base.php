@@ -8,9 +8,9 @@
 <body>
 
 <?php
-require_once('_partials/_header.php');
+require('_partials/_header.php');
 echo $content;
-require_once('_partials/_footer.php');
+require('_partials/_footer.php');
 ?>
 
 </body>

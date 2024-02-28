@@ -49,7 +49,7 @@ function registration()
                     "roles" => ["ROLE_USER"]
                 ];
     
-                header("Location: index");
+                header("Location: ./");
             }
         }
     

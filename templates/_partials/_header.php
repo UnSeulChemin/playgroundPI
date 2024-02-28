@@ -3,6 +3,7 @@
 
     <nav>
         <ul>
+        <li><a href="./">Home</a></li>
             <?php if (!isset($_SESSION["user"])): ?>
                 <li><a href="register">Register</a></li>
                 <li><a href="login">Login</a></li>

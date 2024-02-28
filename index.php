@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "src/global/functions.php";
+require_once "src/global/arrays.php";
 
 require_once "src/Controllers/HomepageController.php";
 require_once "src/Controllers/RegisterController.php";
@@ -8,11 +9,11 @@ require_once "src/Controllers/LoginController.php";
 require_once "src/Controllers/LogoutController.php";
 
 // var_dump($_SESSION["user"]);
-// var_dump($_GET);
+var_dump($_GET);
+var_dump($paths["page"]);
 
 try
 {
-	
 	if (empty($_GET['page']))
 	{
 		homepage();
@@ -20,6 +21,10 @@ try
 
 	if (!empty($_GET['page']))
 	{
+		if ($_GET['page'] === "index")
+		{
+			homepage();
+		}
 
 		if ($_GET['page'] === "register" && verifySessionUser())
 		{
@@ -36,7 +41,10 @@ try
 			logout();
 		}
 
-		homepage();
+		if (!in_array($_GET['page'], $paths["page"]))
+		{
+			header("Location: ./");
+		}
 	}
 }
 

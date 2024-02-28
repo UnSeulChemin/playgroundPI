@@ -4,7 +4,7 @@ function verifySessionUser()
 {
 	if (isset($_SESSION["user"]))
 	{
-		header("Location: index");
+		header("Location: ./");
         exit;
 		return false;
 	}

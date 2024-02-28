@@ -49,7 +49,7 @@ function connection()
                         "roles" => $user["roles"]
                     ];
         
-                    header("Location: index");
+                    header("Location: ./");
                 }
             }
         }
