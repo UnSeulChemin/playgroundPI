@@ -69,6 +69,41 @@ try
 			}
 		}
 
+		if ($_GET['page'] === "rotate")
+		{
+			require_once "src/script/rotate.php";
+
+			rotate();
+		}
+
+		if ($_GET['page'] === "resize")
+		{
+			require_once "src/script/resize.php";
+
+			resize();
+		}
+
+		if ($_GET['page'] === "crop")
+		{
+			require_once "src/script/crop.php";
+
+			crop();
+		}
+
+		if ($_GET['page'] === "flip")
+		{
+			require_once "src/script/flip.php";
+
+			flip();
+		}
+
+		if ($_GET['page'] === "wm")
+		{
+			require_once "src/script/wm.php";
+
+			wm();
+		}
+		
 		if (!in_array($_GET['page'], $paths["page"]))
 		{
 			header("Location: ./");
