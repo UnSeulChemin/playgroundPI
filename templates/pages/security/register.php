@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<?= $title = "Register"; ?>
 
 <h1>Register</h1>
 <?php var_dump($message); ?>

@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<?= $title = "Upload"; ?>
 
 <h1>Ajout de fichier</h1>
 

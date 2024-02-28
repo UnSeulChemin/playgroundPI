@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<?= $title = "Login"; ?>
 
 <h1>Login</h1>
 

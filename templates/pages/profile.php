@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<?= $title = "Profile"; ?>
 
 <h1>Profil de <?= $_SESSION["user"]["name"]; ?></h1>
 

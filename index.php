@@ -9,6 +9,7 @@ require_once "src/Controllers/LoginController.php";
 require_once "src/Controllers/LogoutController.php";
 require_once "src/Controllers/UploadController.php";
 require_once "src/Controllers/ProfileController.php";
+require_once "src/Controllers/ContactController.php";
 
 // var_dump($_SESSION);
 var_dump($_GET);
@@ -51,6 +52,11 @@ try
 		if ($_GET['page'] === "profile" && verifyLoggedUser())
 		{
 			profile();
+		}
+
+		if ($_GET['page'] === "contact" && verifyLoggedUser())
+		{
+			contact();
 		}
 
 		if (!in_array($_GET['page'], $paths["page"]))
