@@ -13,7 +13,7 @@ require_once "src/Controllers/ContactController.php";
 
 // var_dump($_SESSION);
 var_dump($_GET);
-// var_dump($paths);
+var_dump($paths);
 
 try
 {
@@ -29,27 +29,27 @@ try
 			homepage();
 		}
 
-		if ($_GET['page'] === "register" && verifyNotLoggedUser())
+		if ($_GET['page'] === "register" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			register();
 		}
 
-		if ($_GET['page'] === "login" && verifyNotLoggedUser())
+		if ($_GET['page'] === "login" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			login();
 		}
 
-		if ($_GET['page'] === "logout" && verifyLoggedUser())
+		if ($_GET['page'] === "logout" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			logout();
 		}
 
-		if ($_GET['page'] === "upload" && verifyLoggedUser())
+		if ($_GET['page'] === "upload" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			upload();
 		}
 
-		if ($_GET['page'] === "profile" && verifyLoggedUser())
+		if ($_GET['page'] === "profile" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			profile();
 		}

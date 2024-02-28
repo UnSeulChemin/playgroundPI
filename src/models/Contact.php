@@ -51,14 +51,14 @@ function getContacts()
     return $contacts;
 }
 
-function getContact($getId)
+function getContact(int $getId)
 {
     // if(isset($_GET['id']) && !empty($_GET['id']))
 
     // Pour éviter le else si pas d'id.. inveser la condition
     if(!isset($getId) || empty($getId))
     {
-        header("Location: contact");
+        header("Location: ./");
         exit;
     }
 

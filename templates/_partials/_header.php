@@ -3,11 +3,25 @@
 
     <nav>
         <ul>
-        <li><a href="./">Home</a></li>
+            <?php if (isset($_GET['id'])): ?>
+                <li><a href=".././">Home</a></li>
+            <?php else: ?>
+                <li><a href="./">Home</a></li>
+            <?php endif; ?>
+
             <?php if (!isset($_SESSION["user"])): ?>
 
-                <li><a href="register">Register</a></li>
-                <li><a href="login">Login</a></li>
+                <?php if (isset($_GET['id'])): ?>
+                    <li><a href="../register">Register</a></li>
+                <?php else: ?>
+                    <li><a href="register">Register</a></li>
+                <?php endif; ?>
+
+                <?php if (isset($_GET['id'])): ?>
+                    <li><a href="../login">Login</a></li>
+                <?php else: ?>
+                    <li><a href="login">Login</a></li>
+                <?php endif; ?>
 
             <?php else: ?>
 
