@@ -1,3 +1,47 @@
+/* Webkit */
+input::-webkit-input-placeholder
+{
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+textarea::-webkit-input-placeholder
+{
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+input::-moz-placeholder
+{
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+textarea::-moz-placeholder
+{
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+input:-ms-input-placeholder
+{
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+textarea:-ms-input-placeholder
+{
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+/* Global */
 body
 {
     font-family: var(--font-family);
@@ -33,14 +77,14 @@ h2
 {
     font-size: 1.2em;
 
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 h3
 {
     font-size: 1.2em;
 
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 p
@@ -56,6 +100,11 @@ a
     text-decoration: none;
 
     display: block;
+}
+
+form div
+{
+    margin-bottom: 20px;
 }
 
 label

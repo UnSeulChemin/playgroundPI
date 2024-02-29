@@ -11,7 +11,6 @@
 
 <?php require_once('_partials/_header.php'); ?>
 <main><?php echo $content; ?></main>
-<?php require_once('_partials/_footer.php'); ?>
 
 </body>
 </html>

@@ -22,6 +22,11 @@
     padding-bottom: 0;
 }
 
+.section-default
+{
+    padding: 20px 0;
+}
+
 /* Link */
 .link-menu
 {
@@ -39,8 +44,23 @@
     background-color: var(--white);
 }
 
+.link-form
+{
+    display: block;
+    width: 120px;
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    color: var(--background-color);
+    background-color: var(--link-menu);
+
+    margin: auto;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
 /* Margin */
 .margin-right-li
 {
-    margin-right: 10px;
+    margin-right: 15px;
 }

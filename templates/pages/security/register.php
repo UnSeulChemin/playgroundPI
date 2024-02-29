@@ -1,27 +1,28 @@
+<?php $title = "Register"; ?>
 <?php ob_start(); ?>
-<?= $title = "Register"; ?>
 
-<h1>Register</h1>
-<?php var_dump($message); ?>
-<?php if (isset($message)): ?>
-    <p><?= $message; unset($message); ?></p>
-<?php endif; ?>
+<section class="section-default">
 
-<form method="post">
-    <div>
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username">
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password">
-    </div>
-    <button type="submit">Register</button>
-</form>
+    <h2>Register</h2>
+
+    <?php if (isset($message)): ?>
+        <p><?= $message; unset($message); ?></p>
+    <?php endif; ?>
+
+    <form method="post">
+        <div>
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <button class="link-form" type="submit">Register</button>
+    </form>
+
+</section>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('templates/base.php') ?>
