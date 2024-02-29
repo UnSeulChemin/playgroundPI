@@ -1,0 +1,64 @@
+body
+{
+    font-family: var(--font-family);
+    background-color: var(--background-color-body);
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+header
+{
+    background-color: var(--background-color);
+
+    padding: 15px 20px;
+}
+
+main
+{
+    width: 90%;
+    background-color: var(--background-color);
+
+    margin: 25px auto;
+}
+
+footer
+{
+    background-color: var(--background-color);
+
+    padding: 10px 0;
+}
+
+h2
+{
+    font-size: 1.2em;
+
+    padding-bottom: 20px;
+}
+
+h3
+{
+    font-size: 1.2em;
+
+    padding-bottom: 20px;
+}
+
+p
+{
+    font-size: 1.1em;
+
+    padding-bottom: 10px;
+}
+
+a
+{
+    font-size: 1.1em;
+    text-decoration: none;
+
+    display: block;
+}
+
+label
+{
+    font-size: 1.1em;
+}

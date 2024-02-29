@@ -1,0 +1,46 @@
+/* Flex */
+.flex
+{
+    display: flex;
+}
+
+.flex-between
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Section */
+.section-profil
+{
+    padding: 20px 0;
+}
+
+.section-profil p:last-child
+{
+    padding-bottom: 0;
+}
+
+/* Link */
+.link-menu
+{
+    width: 100px;
+    color: var(--background-color);
+    background-color: var(--link-menu);
+
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.link-menu:hover
+{
+    color: var(--black);
+    background-color: var(--white);
+}
+
+/* Margin */
+.margin-right-li
+{
+    margin-right: 10px;
+}

@@ -12,8 +12,8 @@ require_once "src/Controllers/ProfileController.php";
 require_once "src/Controllers/ContactController.php";
 
 // var_dump($_SESSION);
-var_dump($_GET);
-var_dump($paths);
+// var_dump($_GET);
+// var_dump($paths);
 
 try
 {

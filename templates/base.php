@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>playgroundPI <?= $title ?? ""; ?></title>
+	<link rel="stylesheet" type="text/css" href="<?= isset($_GET['id']) ? '../' : null; ?>public/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="<?= isset($_GET['id']) ? '../' : null; ?>public/css/app.css">
 </head>
 <body>
 
-<?php
-require_once('_partials/_header.php');
-echo $content;
-require_once('_partials/_footer.php');
-?>
+<?php require_once('_partials/_header.php'); ?>
+<main><?php echo $content; ?></main>
+<?php require_once('_partials/_footer.php'); ?>
 
 </body>
 </html>
