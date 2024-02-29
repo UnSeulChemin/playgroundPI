@@ -6,7 +6,9 @@
     <h2>Register</h2>
 
     <?php if (isset($message)): ?>
-        <p><?= $message; unset($message); ?></p>
+        <div class="warning-flash">
+            <p><?= $message; unset($message); ?></p>
+        </div>
     <?php endif; ?>
 
     <form method="post">

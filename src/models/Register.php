@@ -12,27 +12,51 @@ function registration()
     
             if (strlen($name) < 5)
             {
-                $message = "Le name est trop court";
+                $message = "The name is too short.";
+                return $message;
+            }
+
+            if (strlen($name) > 12)
+            {
+                $message = "The name is too long.";
                 return $message;
             }
     
             if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
             {
-                $message = "L'adresse email est incorrecte";
+                $message = "The email address is incorrect.";
+                return $message;
+            }
+
+            require_once "src/lib/dbConnect.php";
+            $database = dbConnect();
+
+            $sql = "SELECT * FROM `users` WHERE email = :email";
+        
+            $requete = $database->prepare($sql);
+            $requete->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+            $requete->execute();
+
+            if (!$requete->rowCount() == 0)
+            {
+                $message = "Email already taken.";
+                return $message;
+            }
+
+            // at least 5 characters, at least 1 numeric character, at least 1 lowercase letter,
+            // at least 1 uppercase letter, at least 1 special character.
+            $passwordPattern = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?([^\w\s]|[_])).{5,}$/";
+			
+            if (!preg_match($passwordPattern, $_POST["password"]))
+            {
+                $message = "Password not enough strong.";
                 return $message;
             }
     
             if ($message === "")
             {
                 $password = password_hash($_POST["password"], PASSWORD_ARGON2I);
-                // die($password);
-    
-                // ICI, add tous les autres controles
-    
-                require_once "src/lib/dbConnect.php";
-                $database = dbConnect();
 
-                // `` pour éviter les problème avec les noms réservées..
                 $sql = "INSERT INTO `users` (`name`, `email`, `password`, `roles`) VALUES (:username, :email, '$password', '[\"ROLE_USER\"]')";
         
                 $requete = $database->prepare($sql);
@@ -55,7 +79,7 @@ function registration()
     
         else
         {
-            $message = "Le formulaire est incomplet";
+            $message = "The form is incomplete.";
             return $message;
         }
     }    

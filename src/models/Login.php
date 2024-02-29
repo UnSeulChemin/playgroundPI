@@ -10,7 +10,7 @@ function connection()
 
             if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
             {
-                $message = "L'adresse email est incorrecte";
+                $message = "The email address is incorrect.";
                 return $message;
             }
 
@@ -29,13 +29,13 @@ function connection()
 
                 if (!$user)
                 {
-                    $message = "L'utilisateur et / ou le mot de passe est incorrect";
+                    $message = "The user and / or password is incorrect";
                     return $message;
                 }
 
                 if(!password_verify($_POST["password"], $user["password"]))
                 {
-                    $message = "L'utilisateur et / ou le mot de passe est incorrect";
+                    $message = "The user and / or password is incorrect";
                     return $message;
                 }
 
@@ -51,6 +51,12 @@ function connection()
                     header("Location: ./");
                 }
             }
+        }
+
+        else
+        {
+            $message = "The form is incomplete.";
+            return $message;
         }
     }
 }

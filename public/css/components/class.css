@@ -67,6 +67,23 @@
     color: var(--black);
 }
 
+/* Flash */
+.warning-flash
+{
+    background-color: var(--warning-flash);
+    width: 30%;
+
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.warning-flash p
+{
+    margin-bottom: 0;
+}
+
 /* Lib */
 .bold
 {
