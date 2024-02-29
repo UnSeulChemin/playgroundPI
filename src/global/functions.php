@@ -37,10 +37,29 @@ function verifyNotGetId($pathsIdAllowed)
 	{
 		if (!in_array($_GET['page'], $pathsIdAllowed["id"]))
 		{
-			header("Location: ./");
+			header("Location: .././");
 			exit;
 			return false;
 		}
+	}
+
+	return true;
+}
+
+function verifyLoggedAdmin()
+{
+	if ($_SESSION["user"]["roles"] !== '["ROLE_ADMIN"]')
+	{
+		if (!empty($_GET['id']))
+		{
+			header("Location: ../login");
+			exit;
+			return false;
+		}
+
+		header("Location: login");
+		exit;
+		return false;
 	}
 
 	return true;

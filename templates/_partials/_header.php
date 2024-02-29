@@ -27,6 +27,14 @@
 
             <?php else: ?>
 
+                <?php if ($_SESSION["user"]["roles"] == '["ROLE_ADMIN"]'): ?>
+                    <?php if (isset($_GET['id'])): ?>
+                        <li class="margin-right-li"><a class="link-menu" href="../admin">Admin</a></li>
+                    <?php else: ?>
+                        <li class="margin-right-li"><a class="link-menu" href="admin">Admin</a></li>
+                    <?php endif; ?>
+                <?php endif; ?>
+
                 <?php if (isset($_GET['id'])): ?>
                     <li class="margin-right-li"><a class="link-menu" href="../contact">Contact</a></li>
                 <?php else: ?>

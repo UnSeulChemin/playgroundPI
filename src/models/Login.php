@@ -20,7 +20,6 @@ function connection()
                 $database = dbConnect();
 
                 $sql = "SELECT * FROM `users` WHERE `email` = :email";
-
                 $requete = $database->prepare($sql);
                 $requete->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
                 $requete->execute();

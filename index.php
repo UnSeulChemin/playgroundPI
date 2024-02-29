@@ -10,6 +10,7 @@ require_once "src/Controllers/LogoutController.php";
 require_once "src/Controllers/UploadController.php";
 require_once "src/Controllers/ProfileController.php";
 require_once "src/Controllers/ContactController.php";
+require_once "src/Controllers/AdminController.php";
 
 // var_dump($_SESSION);
 // var_dump($_GET);
@@ -54,18 +55,23 @@ try
 			profile();
 		}
 
-		if ($_GET['page'] === "contact" && verifyLoggedUser())
+		if ($_GET['page'] === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
+		{
+			contact();
+		}
+
+		if ($_GET['page'] === "admin" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin())
 		{
 			if (!empty($_GET['id']))
 			{
 				$getId = $_GET['id'];
 
-				contactId($getId);
+				adminGetContact($getId);
 			}
 
 			else
 			{
-				contact();
+				admin();
 			}
 		}
 
