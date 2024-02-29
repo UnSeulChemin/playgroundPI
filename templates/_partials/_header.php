@@ -28,6 +28,12 @@
             <?php else: ?>
 
                 <?php if (isset($_GET['id'])): ?>
+                    <li class="margin-right-li"><a class="link-menu" href="../contact">Contact</a></li>
+                <?php else: ?>
+                    <li class="margin-right-li"><a class="link-menu" href="contact">Contact</a></li>
+                <?php endif; ?>
+
+                <?php if (isset($_GET['id'])): ?>
                     <li class="margin-right-li"><a class="link-menu" href="../upload">Upload</a></li>
                 <?php else: ?>
                     <li class="margin-right-li"><a class="link-menu" href="upload">Upload</a></li>
@@ -37,12 +43,6 @@
                     <li class="margin-right-li"><a class="link-menu" href="../profile">Profile</a></li>
                 <?php else: ?>
                     <li class="margin-right-li"><a class="link-menu" href="profile">Profile</a></li>
-                <?php endif; ?>
-
-                <?php if (isset($_GET['id'])): ?>
-                    <li class="margin-right-li"><a class="link-menu" href="../contact">Contact</a></li>
-                <?php else: ?>
-                    <li class="margin-right-li"><a class="link-menu" href="contact">Contact</a></li>
                 <?php endif; ?>
 
                 <?php if (isset($_GET['id'])): ?>

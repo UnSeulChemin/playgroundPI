@@ -12,19 +12,20 @@
 }
 
 /* Section */
-.section-profil
+.section-content
 {
-    padding: 20px 0;
-}
-
-.section-profil p:last-child
-{
-    padding-bottom: 0;
+    padding: 30px 0;
 }
 
 .section-default
 {
     padding: 20px 0;
+}
+
+/* Div */
+.div-content p:last-child
+{
+    margin-bottom: 0;
 }
 
 /* Link */
@@ -47,6 +48,7 @@
 .link-form
 {
     display: block;
+    cursor: pointer;
     width: 120px;
     font-size: 1.1em;
     font-family: var(--font-family);
@@ -57,6 +59,18 @@
     padding: 8px;
     border: none;
     border-radius: 5px;
+}
+
+.link-form:hover
+{
+    opacity: 0.9;
+    color: var(--black);
+}
+
+/* Lib */
+.bold
+{
+    font-weight: bold;
 }
 
 /* Margin */

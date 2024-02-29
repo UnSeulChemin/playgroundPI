@@ -1,23 +1,25 @@
+<?php $title = "Login"; ?>
 <?php ob_start(); ?>
-<?= $title = "Login"; ?>
 
-<h1>Login</h1>
+<section class="section-default">
 
-<?php if (isset($message)): ?>
-    <p><?= $message; unset($message); ?></p>
-<?php endif; ?>
+    <h2>Login</h2>
 
-<form method="post">
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email">
-    </div>
-    <div>
-        <label for="pass">Mot de passe</label>
-        <input type="password" id="pass" name="password">
-    </div>
-    <button type="submit">Me connecter</button>
-</form>
+    <?php if (isset($message)): ?>
+        <p><?= $message; unset($message); ?></p>
+    <?php endif; ?>
+
+    <form method="post">
+        <div>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <button class="link-form" type="submit">Login</button>
+    </form>
+
+</section>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('templates/base.php') ?>

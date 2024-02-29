@@ -1,20 +1,21 @@
+<?php $title = "Contact"; ?>
 <?php ob_start(); ?>
-<?= $title = "Contact"; ?>
 
-<h1>Ajouter un contact</h1>
+<section class="section-default">
 
-<!-- POST = pour ajouter des informations en base de données -->
-<form method="post">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title">
-    </div>
-    <div>
-        <label for="content">Content</label>
-        <textarea id="content" name="content"></textarea>
-    </div>
-    <button type="submit">Contact us</button>
-</form>
+    <h2>Contact</h2>
+
+    <form method="post">
+        <div>
+            <input type="text" name="title" placeholder="Title">
+        </div>
+        <div>
+            <input type="text" name="content" placeholder="Content">
+        </div>
+        <button class="link-form" type="submit">Contact</button>
+    </form>
+
+</section>
 
 <h2>Show contact</h2>
 

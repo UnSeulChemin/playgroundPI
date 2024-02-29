@@ -1,9 +1,14 @@
 <?php ob_start(); ?>
 
-<section class="section-profil">
-    <h1>Homepage</h1>
-    <p>blablabla</p>
-    <p>blablabla</p>
+<section class="section-content">
+
+    <h2>PlaygroundPI</h2>
+   
+    <div class="div-content">
+        <p>What's news?</p>
+        <p>Register for free and see all news.</p>
+    </div>
+
 </section>
 
 <?php $content = ob_get_clean(); ?>

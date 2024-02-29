@@ -1,11 +1,14 @@
+<?php $title = "Profile"; ?>
 <?php ob_start(); ?>
-<?= $title = "Profile"; ?>
 
-<h1>Profil de <?= $_SESSION["user"]["name"]; ?></h1>
+<section class="section-content">
 
-<p>Pseudo : <?= $_SESSION["user"]["name"]; ?></p>
-<p>Email : <?= $_SESSION["user"]["email"]; ?></p>
+    <div class="div-content">
+        <p>Welcome <span class="bold"><?= ucfirst($_SESSION["user"]["name"]); ?></span></p>
+        <p>Your email is <span class="bold"><?= $_SESSION["user"]["email"]; ?></span></p>
+    </div>
 
+</section>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('templates/base.php') ?>
