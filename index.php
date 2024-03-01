@@ -19,127 +19,103 @@ require_once "src/Controllers/AdminController.php";
 
 try
 {
-	if (empty($_GET['page']))
-	{
+	if (empty($_GET['page'])):
 		homepage();
-	}
+	endif;
 
-	if (!empty($_GET['page']))
-	{
-		if ($_GET['page'] === "index")
-		{
+	if (!empty($_GET['page'])):
+
+		if ($_GET['page'] === "index"):
 			homepage();
-		}
+		endif;
 
-		if ($_GET['page'] === "register" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
+		if ($_GET['page'] === "register" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			register();
-		}
+		endif;
 
-		if ($_GET['page'] === "login" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
+		if ($_GET['page'] === "login" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			login();
-		}
+		endif;
 
-		if ($_GET['page'] === "logout" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
+		if ($_GET['page'] === "logout" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			logout();
-		}
+		endif;
 
-		if ($_GET['page'] === "shop" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
-			if (!empty($_GET['id']))
-			{
-				if ($_GET['id'] > 2)
-				{
+		if ($_GET['page'] === "shop" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+
+			if (!empty($_GET['id'])):
+
+				if ($_GET['id'] > 2):
 					header("Location: ../shop");
-				}
+				endif;
 
 				$getId = $_GET['id'];
 				shopPaginate($getId);
-			}
 
-			else
-			{
+			?><?php else:
 				shop();
-			}
-		}
+			endif;
+		endif;
 
-		if ($_GET['page'] === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
+		if ($_GET['page'] === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			contact();
-		}
+		endif;
 
-		if ($_GET['page'] === "upload" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
+		if ($_GET['page'] === "upload" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			upload();
-		}
+		endif;
 
-		if ($_GET['page'] === "profile" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
+		if ($_GET['page'] === "profile" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			profile();
-		}
+		endif;
 
-		if ($_GET['page'] === "admin" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin())
-		{
+		if ($_GET['page'] === "admin" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
 			admin();
-		}
+		endif;
 
-		if ($_GET['page'] === "contacts" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin())
-		{
-			if (!empty($_GET['id']))
-			{
+		if ($_GET['page'] === "contacts" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
+
+			if (!empty($_GET['id'])):
+
 				$getId = $_GET['id'];
 				contactId($getId);
-			}
 
-			else
-			{
+			?><?php else:
 				contacts();
-			}
+			endif;
+		endif;
 
-		}
 
-		if ($_GET['page'] === "rotate")
-		{
+		if ($_GET['page'] === "rotate"):
 			require_once "src/script/rotate.php";
-
 			rotate();
-		}
+		endif;
 
-		if ($_GET['page'] === "resize")
-		{
+		if ($_GET['page'] === "resize"):
 			require_once "src/script/resize.php";
-
 			resize();
-		}
+		endif;
 
-		if ($_GET['page'] === "crop")
-		{
+		if ($_GET['page'] === "crop"):
 			require_once "src/script/crop.php";
-
 			crop();
-		}
+		endif;
 
-		if ($_GET['page'] === "flip")
-		{
+		if ($_GET['page'] === "flip"):
 			require_once "src/script/flip.php";
-
 			flip();
-		}
+		endif;
 
-		if ($_GET['page'] === "wm")
-		{
+		if ($_GET['page'] === "wm"):
 			require_once "src/script/wm.php";
-
 			wm();
-		}
+		endif;
 		
 		if (!in_array($_GET['page'], $paths["page"]))
 		{
 			header("Location: ./");
 		}
-	}
+	endif;
 }
 
 catch (Exception $exception)
