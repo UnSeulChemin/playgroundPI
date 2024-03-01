@@ -111,10 +111,9 @@ try
 			wm();
 		endif;
 		
-		if (!in_array($_GET['page'], $paths["page"]))
-		{
+		if (!in_array($_GET['page'], $paths["page"])):
 			header("Location: ./");
-		}
+		endif;
 	endif;
 }
 
