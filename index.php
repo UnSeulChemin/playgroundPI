@@ -10,6 +10,7 @@ require_once "src/Controllers/LogoutController.php";
 require_once "src/Controllers/UploadController.php";
 require_once "src/Controllers/ProfileController.php";
 require_once "src/Controllers/ContactController.php";
+require_once "src/Controllers/ShopController.php";
 require_once "src/Controllers/AdminController.php";
 
 // var_dump($_SESSION);
@@ -45,6 +46,25 @@ try
 			logout();
 		}
 
+		if ($_GET['page'] === "shop" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
+		{
+			if (!empty($_GET['id']))
+			{
+				if ($_GET['id'] > 2)
+				{
+					header("Location: ../shop");
+				}
+
+				$getId = $_GET['id'];
+				shopPaginate($getId);
+			}
+
+			else
+			{
+				shop();
+			}
+		}
+
 		if ($_GET['page'] === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			contact();
@@ -65,7 +85,6 @@ try
 			if (!empty($_GET['id']))
 			{
 				$getId = $_GET['id'];
-
 				adminGetContact($getId);
 			}
 

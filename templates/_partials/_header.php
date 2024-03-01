@@ -36,6 +36,12 @@
                 <?php endif; ?>
 
                 <?php if (isset($_GET['id'])): ?>
+                    <li class="margin-right-li"><a class="link-menu" href="../shop">Shop</a></li>
+                <?php else: ?>
+                    <li class="margin-right-li"><a class="link-menu" href="shop">Shop</a></li>
+                <?php endif; ?>
+
+                <?php if (isset($_GET['id'])): ?>
                     <li class="margin-right-li"><a class="link-menu" href="../contact">Contact</a></li>
                 <?php else: ?>
                     <li class="margin-right-li"><a class="link-menu" href="contact">Contact</a></li>
