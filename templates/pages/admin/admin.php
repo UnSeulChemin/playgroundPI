@@ -5,13 +5,6 @@
 
     <h2>Admin</h2>
 
-    <h2>Show contact</h2>
-
-    <!-- Toujours une boucle apres foreach 
-    -- raccourcie pour éviter d'avoir l'accolage.. plus pratique / visible / propre
-    strip_tags : n'affiche pas le code html / js (= envoyer en base) sql gere pour date
-    -->
-
     <section>
     <?php foreach($contacts as $contact): ?>
         <article>

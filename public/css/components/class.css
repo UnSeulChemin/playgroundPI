@@ -84,6 +84,22 @@
     margin-bottom: 0;
 }
 
+.success-flash
+{
+    background-color: var(--success-flash);
+    width: 30%;
+
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.success-flash p
+{
+    margin-bottom: 0;
+}
+
 /* Lib */
 .bold
 {

@@ -45,6 +45,11 @@ try
 			logout();
 		}
 
+		if ($_GET['page'] === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
+		{
+			contact();
+		}
+
 		if ($_GET['page'] === "upload" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			upload();
@@ -53,11 +58,6 @@ try
 		if ($_GET['page'] === "profile" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
 		{
 			profile();
-		}
-
-		if ($_GET['page'] === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed))
-		{
-			contact();
 		}
 
 		if ($_GET['page'] === "admin" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin())

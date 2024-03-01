@@ -23,6 +23,8 @@ function contactUs()
                 $message = "An error has occurred.";
                 return $message;
             }
+
+            $_SESSION["validate"] = "Success.";
         }
     
         else

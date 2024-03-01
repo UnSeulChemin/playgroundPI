@@ -11,6 +11,12 @@
         </div>
     <?php endif; ?>
 
+    <?php if (isset($_SESSION["validate"])): ?>
+        <div class="success-flash">
+            <p><?= $_SESSION["validate"]; unset($_SESSION["validate"]); ?></p>
+        </div>
+    <?php endif; ?>
+
     <form method="post">
         <div>
             <input type="text" name="title" placeholder="Title">
