@@ -22,39 +22,22 @@
     </section>
 
     <nav>
-        <?php
-        for ($count = 1; $count <= $countPage; $count++)
-        { 
-            if (!isset($getId))
-            {
+        <?php for ($count = 1; $count <= $countPage; $count++): ?>
+        
+            <?php if (!isset($getId)):
                 $getId = 1;
-            }
+            endif; ?>
 
-            if ($getId != $count)
-            {
-                if (isset($_GET['id']) && !empty($_GET['id']))
-                {
-                    ?>
-                    <a href="../shop/<?php echo $count; ?>"><?php echo $count; ?></a>                   
-                    <?php
-                }
-
-                else
-                {
-                    ?>
+            <?php if ($getId != $count):
+                if (isset($_GET['id']) && !empty($_GET['id'])): ?>
+                    <a href="../shop/<?php echo $count; ?>"><?php echo $count; ?></a>               
+                <?php else: ?>
                     <a href="shop/<?php echo $count; ?>"><?php echo $count; ?></a>
-                    <?php
-                }
-            }
-
-            else
-            {
-                ?>
+                <?php endif; ?>
+            <?php else: ?>
                 <a class="active"><?php echo $count; ?></a>
-                <?php
-            }
-        }
-        ?>
+            <?php endif; ?>
+        <?php endfor; ?>
     </nav>
 
 </section>
