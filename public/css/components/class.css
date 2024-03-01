@@ -1,49 +1,4 @@
 /* Flex */
-
-.display-card
-{
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card
-{
-    width: 20%;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.figure-card
-{
-    border: 3px solid var(--content);    
-}
-
-.figure-card img
-{
-    width: 100%;
-
-    display: flex;
-}
-
-.card-border
-{
-    border-right: 3px solid var(--content);
-    border-left: 3px solid var(--content);
-    border-bottom: 3px solid var(--content);
-}
-.card-border p
-{
-    padding: 10px 0;
-    margin-bottom: 0;
-}
-
-
-
-
 .flex
 {
     display: flex;
@@ -150,6 +105,73 @@
 .success-flash p
 {
     margin-bottom: 0;
+}
+
+/* Card */
+.display-card
+{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card
+{
+    width: 20%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.figure-card
+{
+    border: 3px solid var(--content);    
+}
+
+.figure-card img
+{
+    width: 100%;
+
+    display: flex;
+}
+
+.card-border
+{
+    border-right: 3px solid var(--content);
+    border-left: 3px solid var(--content);
+    border-bottom: 3px solid var(--content);
+}
+.card-border p
+{
+    padding: 10px 0;
+    margin-bottom: 0;
+}
+
+.card-nav
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.card-nav a
+{
+    width: 15px;
+    color: var(--background-color);
+    background-color: var(--link-menu);
+
+    margin-right: 15px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.card-nav a:last-child
+{
+    margin-right: 0;
 }
 
 /* Lib */

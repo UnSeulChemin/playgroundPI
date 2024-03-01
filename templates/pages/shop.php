@@ -21,7 +21,7 @@
         <?php endforeach; ?>
     </section>
 
-    <nav>
+    <nav class="card-nav">
         <?php for ($count = 1; $count <= $countPage; $count++): ?>
         
             <?php if (!isset($getId)):
