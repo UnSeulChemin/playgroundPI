@@ -4,6 +4,13 @@
     display: flex;
 }
 
+.flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex-between
 {
     display: flex;
@@ -101,6 +108,22 @@
 }
 
 /* Lib */
+.label-file
+{
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--content);
+
+    padding: 5px;
+    border: 5px solid var(--border);
+    border-radius: 5px;
+}
+
+.input-file
+{
+    display: none;
+}
+
 .bold
 {
     font-weight: bold;

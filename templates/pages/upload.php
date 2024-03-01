@@ -5,24 +5,27 @@
 
     <h2>Upload</h2>
 
+    <?php if (isset($message)): ?>
+        <div class="warning-flash">
+            <p><?= $message; unset($message); ?></p>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION["validate"])): ?>
+        <div class="success-flash">
+            <p><?= $_SESSION["validate"]; unset($_SESSION["validate"]); ?></p>
+        </div>
+    <?php endif; ?>
+
     <form method="post" enctype="multipart/form-data">
-        <div>
-            <input type="file" name="image" placeholder="file">
+        <div class="flex-center">
+            <label class="label-file" for="file">Image</label>
+            <input class="input-file" type="file" id="file" name="image">
         </div>
         <button class="link-form" type="submit">Envoyer</button>
     </form>
 
 </section>
-
-
-
-
-<a href="resize">resize</a>
-<a href="rotate">rotate</a>
-<a href="crop">crop</a>
-<a href="flip">flip</a>
-<a href="wm">wm</a>
-
 
 <?php $content = ob_get_clean(); ?>
 <?php require('templates/base.php') ?>

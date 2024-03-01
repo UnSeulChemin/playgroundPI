@@ -3,7 +3,7 @@ require_once "src/models/Upload.php";
 
 function upload()
 {
-	uploader();
+	$message = uploader();
 
 	require('templates/pages/upload.php');
 }
