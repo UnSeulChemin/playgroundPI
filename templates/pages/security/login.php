@@ -13,7 +13,7 @@
 
     <form method="post">
         <div>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email" autofocus>
         </div>
         <div>
             <input type="password" name="password" placeholder="Password">

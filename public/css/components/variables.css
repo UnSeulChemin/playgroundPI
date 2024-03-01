@@ -3,6 +3,7 @@
     --background-color-body: #cbf6db;
     --background-color: #aed6dc;
     --link-menu: #4a536b;
+    --input: #f5f5ef;
     --content: #6495ED;
     --border: #F5F5DC;
 
@@ -11,6 +12,7 @@
 
     --white: #ffffff;
     --black: #000000;
+    --grey: #333333;
 
     --font-family: 'Montserrat', 'Open Sans', sans-serif;
 }

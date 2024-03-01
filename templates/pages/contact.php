@@ -19,7 +19,7 @@
 
     <form method="post">
         <div>
-            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="title" placeholder="Title" autofocus>
         </div>
         <div>
             <input type="text" name="content" placeholder="Content">
