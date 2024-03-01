@@ -82,16 +82,22 @@ try
 
 		if ($_GET['page'] === "admin" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin())
 		{
+			admin();
+		}
+
+		if ($_GET['page'] === "contacts" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin())
+		{
 			if (!empty($_GET['id']))
 			{
 				$getId = $_GET['id'];
-				adminGetContact($getId);
+				contactId($getId);
 			}
 
 			else
 			{
-				admin();
+				contacts();
 			}
+
 		}
 
 		if ($_GET['page'] === "rotate")

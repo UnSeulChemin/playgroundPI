@@ -1,4 +1,4 @@
 <?php 
 
-$paths["page"] = ["", "register", "login", "logout", "upload", "profile", "contact", "shop", "admin"];
-$pathsIdAllowed["id"] = ["admin", "shop"];
+$paths["page"] = ["", "register", "login", "logout", "upload", "profile", "contact", "shop", "admin", "contacts"];
+$pathsIdAllowed["id"] = ["shop", "contacts"];
