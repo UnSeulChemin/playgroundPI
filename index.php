@@ -16,7 +16,7 @@ require_once "src/Controllers/ErrorController.php";
 
 // var_dump($_SESSION);
 // var_dump($_GET);
-// var_dump($paths);
+ // var_dump($paths);
 
 try
 {
@@ -86,7 +86,6 @@ try
 			endif;
 		endif;
 
-
 		if ($_GET['page'] === "rotate"):
 			require_once "src/script/rotate.php";
 			rotate();
@@ -112,8 +111,16 @@ try
 			wm();
 		endif;
 		
-		if (!in_array($_GET['page'], $paths["page"])):
+		if (!in_array($_GET['page'], $paths["page"]) && !in_array($_GET['page'], $paths["admin"])):
 			header("Location: ./");
+		endif;
+
+		if (in_array($_GET['page'], $paths["admin"]) && verifyLoggedUser() && verifyLoggedAdmin()):
+			if ($_GET['page'] === "dcontact"):
+				$id = $_GET['id'];
+				require_once "src/script/delete.php";
+				delete($id);
+			endif;
 		endif;
 	endif;
 }

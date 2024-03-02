@@ -10,7 +10,13 @@
             <p class="bold"><?= strip_tags($contact['title']); ?></p>
             <p><?= strip_tags($contact['content']); ?></p>
             <p><?= date('d/m/Y', strtotime($contact['created_at'])); ?></p>
-            <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>contacts/<?= $contact['id']; ?>">Preview</a>
+            <div class="margin-bottom">
+                <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>contacts/<?= $contact['id']; ?>">Preview</a>
+            </div>
+            <div>
+                <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>dcontact/<?= $contact['id']; ?>">Delete</a>
+            </div>
+
         </article>
     <?php endforeach; ?>
 
