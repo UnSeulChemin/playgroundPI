@@ -35,8 +35,7 @@ function getContact(int $getId)
     if (!$contact)
     {
         http_response_code(404);
-        echo "Incorrect contact";
-        exit;
+        throw new Exception("Incorrect contact");
     }
 
     return $contact;

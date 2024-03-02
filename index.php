@@ -12,6 +12,7 @@ require_once "src/Controllers/ProfileController.php";
 require_once "src/Controllers/ContactController.php";
 require_once "src/Controllers/ShopController.php";
 require_once "src/Controllers/AdminController.php";
+require_once "src/Controllers/ErrorController.php";
 
 // var_dump($_SESSION);
 // var_dump($_GET);
@@ -119,5 +120,6 @@ try
 
 catch (Exception $exception)
 {
-	die("Error :".$exception->getMessage());
+	error404($exception->getMessage());
+	exit;
 }
