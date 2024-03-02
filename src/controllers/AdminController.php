@@ -19,3 +19,11 @@ function contactId(int $getId)
 
 	require('templates/pages/admin/contactId.php');
 }
+
+function modifyContact($id)
+{
+	$contact = getContact($id);
+	$message = updateContact();
+
+	require('templates/pages/admin/modifycontact.php');	
+}

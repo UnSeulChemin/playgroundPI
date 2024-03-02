@@ -13,6 +13,9 @@
             <div class="margin-bottom">
                 <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>contacts/<?= $contact['id']; ?>">Preview</a>
             </div>
+            <div class="margin-bottom">
+                <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>mcontact/<?= $contact['id']; ?>">Modify</a>
+            </div>
             <div>
                 <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>dcontact/<?= $contact['id']; ?>">Delete</a>
             </div>

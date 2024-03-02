@@ -1,7 +1,7 @@
 <?php $title = "Contact"; ?>
 <?php ob_start(); ?>
 
-<section class="section-default">
+<section class="section-content">
 
     <h2>Contact</h2>
 

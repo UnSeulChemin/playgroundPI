@@ -1,6 +1,6 @@
 <?php
 
-function delete($id)
+function deleteContact($id)
 {
     require_once "src/lib/dbConnect.php";
     $database = dbConnect();
@@ -13,10 +13,10 @@ function delete($id)
     if (!$requete)
     {
         http_response_code(404);
-        throw new Exception("Incorrect delete");
+        throw new Exception("Request Failed.");
     }
 
-    if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] != "")
+    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] != "")
     {
         $url = $_SERVER['HTTP_REFERER'];
     }
