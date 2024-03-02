@@ -196,6 +196,27 @@
     font-weight: bold;
 }
 
+.article-show
+{
+    width: 80%;
+
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border: 3px solid var(--content);
+    border-radius: 3px;
+}
+
+.article-show:last-of-type
+{
+    margin-bottom: 0;
+}
+
+.article-show p:last-of-type
+{
+    margin-bottom: 15px;
+}
+
 /* Margin */
 .margin-right-li
 {

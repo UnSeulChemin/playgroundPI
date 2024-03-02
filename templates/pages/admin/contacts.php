@@ -5,15 +5,14 @@
 
     <h2>Contacts</h2>
 
-    <section>
-        <?php foreach($contacts as $contact): ?>
-            <article>
-                <h1><a href="contacts/<?= $contact['id']; ?>"><?= strip_tags($contact['title']); ?></a></h1>
-                <div><?= strip_tags($contact['content']); ?></div>
-                <p>Publié le <?= $contact['created_at'] ?></p>
-            </article>
-        <?php endforeach; ?>
-    </section>
+    <?php foreach($contacts as $contact): ?>
+        <article class="article-show">
+            <p class="bold"><?= strip_tags($contact['title']); ?></p>
+            <p><?= strip_tags($contact['content']); ?></p>
+            <p><?= date('d/m/Y', strtotime($contact['created_at'])); ?></p>
+            <a class="link-form" href="contacts/<?= $contact['id']; ?>">See</a>
+        </article>
+    <?php endforeach; ?>
 
 </section>
 
