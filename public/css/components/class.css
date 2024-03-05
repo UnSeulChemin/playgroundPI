@@ -114,12 +114,13 @@
     align-items: baseline;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
 }
 
 .card
 {
     width: 20%;
+    word-wrap: break-word;
 
     display: flex;
     flex-direction: column;
@@ -139,13 +140,26 @@
 
 .card-border
 {
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-right: 3px solid var(--content);
     border-left: 3px solid var(--content);
     border-bottom: 3px solid var(--content);
 }
+
+.card-border:first-of-type
+{
+    height: 80px;
+}
+
 .card-border p
 {
-    padding: 10px 0;
+    width: 90%;
+
     margin-bottom: 0;
 }
 
