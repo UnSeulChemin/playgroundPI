@@ -18,6 +18,7 @@ function getShop(int $getId = 1): array
         $shop = [
             'id' => $row['id'],
             'name' => $row['name'],
+            'extension' => $row['extension'],
             'description' => $row['description'],
             'created_at' => $row['created_at']
         ];

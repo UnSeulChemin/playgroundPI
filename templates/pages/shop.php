@@ -9,7 +9,7 @@
         <?php foreach($shops as $shop): ?>
             <div class="card">
                 <figure class="figure-card">
-                    <img src="<?= isset($_GET['id']) ? '../' : null; ?>public/images/shop/<?= $shop['name']; ?>.jpg">
+                    <img src="<?= isset($_GET['id']) ? '../' : null; ?>public/images/shop/<?= $shop['name'].".".$shop['extension']; ?>">
                 </figure>
                 <div class="card-border">
                     <p><?= $shop['description']; ?></p>
