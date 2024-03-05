@@ -2,7 +2,7 @@
 
 function crop()
 {
-    $fichier = "a.jpg";
+    $fichier = "default.jpg";
     
     $image = "public/images/uploads/$fichier";
     
