@@ -4,7 +4,7 @@ function resize()
 {
     $fichier = "default.jpg";
 
-    $image = "public/images/uploads/$fichier";
+    $image = "public/images/script/$fichier";
     
     // On récupére les infos de l'image
     $infos = getimagesize($image);
@@ -51,12 +51,12 @@ function resize()
     {
         case "image/png":
             // On enregistre l'image
-            imagepng($nouvelleImage, "public/images/uploads/resize-".$fichier);
+            imagepng($nouvelleImage, "public/images/script/resize-".$fichier);
             break;
     
         case "image/jpeg":
             // On ouvre l'image
-            imagejpeg($nouvelleImage, "public/images/uploads/resize-".$fichier);
+            imagejpeg($nouvelleImage, "public/images/script/resize-".$fichier);
             break;
     }
     

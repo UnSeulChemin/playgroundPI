@@ -32,10 +32,10 @@ function uploader()
         
             $newname = md5(uniqid()); // Generate unique name
         
-            $newfilename = "public/images/uploads/$newname.$extension";    
+            $newfilename = "public/images/upload/$newname.$extension";    
 
             // Prend le nom du fichier " $newname.$extension " et on le stock
-            // Supprimer le fichier / une image " unlink(__DIR__/uploads/dfjfjfnj.svg); "
+            // Supprimer le fichier / une image " unlink(__DIR__/upload/dfjfjfnj.svg); "
             // MAJ d'un avatar, ancien nom en base de données, on le récupere puis unlink();, 
             // puis move_uploaded_file sur le nouveau. DONE
             // ou on garde le meme nom puis puis move_uploaded_file apres le unlink

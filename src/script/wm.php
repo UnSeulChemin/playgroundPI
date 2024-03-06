@@ -4,7 +4,7 @@ function wm()
 {
     $fichier = "default.jpg";
     
-    $image = "public/images/uploads/$fichier";
+    $image = "public/images/script/$fichier";
     
     // On récupére les infos de l'image
     $infos = getimagesize($image);
@@ -29,8 +29,8 @@ function wm()
     }
     
     // On ouvre le logo
-    $logo = imagecreatefrompng("public/images/uploads/logo.png");
-    $infosLogo = getimagesize("public/images/uploads/logo.png");
+    $logo = imagecreatefrompng("public/images/script/logo.png");
+    $infosLogo = getimagesize("public/images/script/logo.png");
     
     // On copie toute l'image source dans l'image destination en la réduisant
     imagecopyresampled(
@@ -52,12 +52,12 @@ function wm()
     {
         case "image/png":
             // On enregistre l'image
-            imagepng($imageSource, "public/images/uploads/wm-".$fichier);
+            imagepng($imageSource, "public/images/script/wm-".$fichier);
             break;
     
         case "image/jpeg":
             // On ouvre l'image
-            imagejpeg($imageSource, "public/images/uploads/wm-".$fichier);
+            imagejpeg($imageSource, "public/images/script/wm-".$fichier);
             break;
     }
     

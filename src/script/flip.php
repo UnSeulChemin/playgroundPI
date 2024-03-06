@@ -4,7 +4,7 @@ function flip()
 {
     $fichier = "default.jpg";
     
-    $image = "public/images/uploads/$fichier";
+    $image = "public/images/script/$fichier";
     
     // On récupére les infos de l'image
     $infos = getimagesize($image);
@@ -32,12 +32,12 @@ function flip()
     {
         case "image/png":
             // On enregistre l'image
-            imagepng($imageSource, "public/images/uploads/flip-".$fichier);
+            imagepng($imageSource, "public/images/script/flip-".$fichier);
             break;
     
         case "image/jpeg":
             // On ouvre l'image
-            imagejpeg($imageSource, "public/images/uploads/flip-".$fichier);
+            imagejpeg($imageSource, "public/images/script/flip-".$fichier);
             break;
     }
     

@@ -4,7 +4,7 @@ function rotate()
 {
     $fichier = "default.jpg";
 
-    $image = "public/images/uploads/$fichier";  
+    $image = "public/images/script/$fichier";  
     
     // On récupére les infos de l'image
     $infos = getimagesize($image);
@@ -32,12 +32,12 @@ function rotate()
     {
         case "image/png":
             // On enregistre l'image
-            imagepng($nouvelleImage, "public/images/uploads/rotate-".$fichier);
+            imagepng($nouvelleImage, "public/images/script/rotate-".$fichier);
             break;
     
         case "image/jpeg":
             // On ouvre l'image
-            imagejpeg($nouvelleImage, "public/images/uploads/rotate-".$fichier);
+            imagejpeg($nouvelleImage, "public/images/script/rotate-".$fichier);
             break;
     }
     
