@@ -20,7 +20,7 @@
     <form method="post" enctype="multipart/form-data">
         <div class="flex-center">
             <label class="label-file" for="file">Image</label>
-            <input class="input-file" type="file" id="file" name="image">
+            <input class="none" type="file" id="file" name="image">
         </div>
         <button class="link-form" type="submit">Envoyer</button>
     </form>

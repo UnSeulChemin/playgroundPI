@@ -8,8 +8,6 @@
             <?php endif; ?>
         </div>
 
-        <div>
-
         <ul class="flex">
             <?php if (!isset($_SESSION["user"])): ?>
 
@@ -67,6 +65,5 @@
 
             <?php endif; ?>
         </ul>
-        </div>
     </nav>
 </header>

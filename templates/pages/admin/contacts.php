@@ -6,7 +6,7 @@
     <h2>Contacts</h2>
 
     <?php foreach($contacts as $contact): ?>
-        <article class="article-show">
+        <article class="article-content">
             <p class="bold"><?= strip_tags($contact['title']); ?></p>
             <p><?= strip_tags($contact['content']); ?></p>
             <p><?= date('d/m/Y', strtotime($contact['created_at'])); ?></p>
