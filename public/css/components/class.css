@@ -1,33 +1,6 @@
-/* Flex */
-.flex
-{
-    display: flex;
-}
-
-.flex-center
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-between
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Section */
-.section-content
-{
-    padding: 30px 0;
-}
-
-.section-default
-{
-    padding: 20px 0;
-}
+/* Sumary (CTRL + F)
+Section, Flex
+*/
 
 /* Div */
 .div-content p:last-child
@@ -54,7 +27,6 @@
 
 .link-form
 {
-    display: block;
     cursor: pointer;
     width: 120px;
     font-size: 1.1em;
@@ -62,7 +34,6 @@
     color: var(--background-color-content);
     background-color: var(--background-color-menu);
 
-    margin: auto;
     padding: 8px;
     border: none;
     border-radius: 5px;
@@ -245,4 +216,30 @@
 .margin-bottom
 {
     margin-bottom: 15px;
+}
+
+/* Section */
+.section-content
+{
+    padding: 30px 0;
+}
+
+/* Flex */
+.flex
+{
+    display: flex;
+}
+
+.flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
