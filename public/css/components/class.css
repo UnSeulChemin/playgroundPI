@@ -39,8 +39,8 @@
 .link-menu
 {
     width: 100px;
-    color: var(--background-color);
-    background-color: var(--link-menu);
+    color: var(--background-color-content);
+    background-color: var(--background-color-menu);
 
     padding: 8px;
     border-radius: 10px;
@@ -59,8 +59,8 @@
     width: 120px;
     font-size: 1.1em;
     font-family: var(--font-family);
-    color: var(--background-color);
-    background-color: var(--link-menu);
+    color: var(--background-color-content);
+    background-color: var(--background-color-menu);
 
     margin: auto;
     padding: 8px;
@@ -175,8 +175,8 @@
 .card-nav a
 {
     width: 15px;
-    color: var(--background-color);
-    background-color: var(--link-menu);
+    color: var(--background-color-content);
+    background-color: var(--background-color-menu);
 
     margin-right: 15px;
     padding: 8px;
@@ -193,16 +193,21 @@
 {
     cursor: pointer;
     color: var(--white);
-    background-color: var(--content);
+    background-color: var(--active);
 
     padding: 5px;
-    border: 5px solid var(--border);
+    border: 5px solid var(--border-label);
     border-radius: 5px;
 }
 
 .input-file
 {
     display: none;
+}
+
+.active
+{
+    color: var(--active);
 }
 
 .bold

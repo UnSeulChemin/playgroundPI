@@ -6,9 +6,11 @@
     <h2>Admin</h2>
 
     <nav class="flex-center">
-        <a class="link-menu" href="contacts">Contacts</a>
-        <!-- <a href="">Upload</a> -->
-        <!-- <a href="">Users</a> -->
+        <ul class="flex">
+            <li class="margin-right-li"><a class="link-menu" href="contacts">Contacts</a></li>
+            <!-- <li><a class="link-menu" href="uploads">Uploads</a></li> -->
+            <!-- <li><a class="link-menu" href="uploads">Script</a></li> -->
+        </ul>
     </nav>
 
 </section>
