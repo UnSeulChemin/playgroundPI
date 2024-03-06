@@ -45,6 +45,22 @@ Section, Flex
     color: var(--black);
 }
 
+.link-paginate
+{
+    width: 20px;
+    color: var(--background-color-content);
+    background-color: var(--background-color-menu);
+
+    margin-right: 15px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.link-paginate:last-child
+{
+    margin-right: 0;
+}
+
 /* Flash */
 .warning-flash
 {
@@ -141,22 +157,6 @@ Section, Flex
     align-items: center;
 
     margin-top: 20px;
-}
-
-.card-nav a
-{
-    width: 15px;
-    color: var(--background-color-content);
-    background-color: var(--background-color-menu);
-
-    margin-right: 15px;
-    padding: 8px;
-    border-radius: 10px;
-}
-
-.card-nav a:last-child
-{
-    margin-right: 0;
 }
 
 /* Lib */

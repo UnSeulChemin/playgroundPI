@@ -30,12 +30,12 @@
 
             <?php if ($getId != $count):
                 if (isset($_GET['id']) && !empty($_GET['id'])): ?>
-                    <a href="../shop/<?php echo $count; ?>"><?php echo $count; ?></a>               
+                    <a class="link-paginate" href="../shop/<?php echo $count; ?>"><?php echo $count; ?></a>               
                 <?php else: ?>
-                    <a href="shop/<?php echo $count; ?>"><?php echo $count; ?></a>
+                    <a class="link-paginate" href="shop/<?php echo $count; ?>"><?php echo $count; ?></a>
                 <?php endif; ?>
             <?php else: ?>
-                <a class="active"><?php echo $count; ?></a>
+                <a class="link-paginate active"><?php echo $count; ?></a>
             <?php endif; ?>
         <?php endfor; ?>
     </nav>
