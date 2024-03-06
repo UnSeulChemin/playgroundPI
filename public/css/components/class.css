@@ -1,5 +1,5 @@
 /* Sumary (CTRL + F)
-Section, Flex
+Flash, Section, Flex
 */
 
 /* Div */
@@ -59,39 +59,6 @@ Section, Flex
 .link-paginate:last-child
 {
     margin-right: 0;
-}
-
-/* Flash */
-.warning-flash
-{
-    background-color: var(--warning-flash);
-    width: 30%;
-
-    margin: auto;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.warning-flash p
-{
-    margin-bottom: 0;
-}
-
-.success-flash
-{
-    background-color: var(--success-flash);
-    width: 30%;
-
-    margin: auto;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.success-flash p
-{
-    margin-bottom: 0;
 }
 
 /* Card */
@@ -216,6 +183,37 @@ Section, Flex
 .margin-bottom
 {
     margin-bottom: 15px;
+}
+
+/* Flash */
+.warning-flash
+{
+    width: 30%;
+    background-color: var(--warning-flash);
+
+    margin: 0 auto 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.warning-flash p
+{
+    margin-bottom: 0;
+}
+
+.success-flash
+{
+    width: 30%;    
+    background-color: var(--success-flash);
+
+    margin: 0 auto 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.success-flash p
+{
+    margin-bottom: 0;
 }
 
 /* Section */
