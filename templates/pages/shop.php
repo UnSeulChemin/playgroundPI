@@ -5,23 +5,23 @@
 
     <h2>Shop</h2>
    
-    <section class="display-card">
+    <section class="section-card">
         <?php foreach($shops as $shop): ?>
-            <div class="card">
+            <div class="div-card">
                 <figure class="figure-card">
                     <img src="<?= isset($_GET['id']) ? '../' : null; ?>public/images/shop/<?= $shop['name'].".".$shop['extension']; ?>">
                 </figure>
-                <div class="card-border">
-                    <p><?= $shop['description']; ?></p>
+                <div class="div-card-border">
+                    <p class="margin-none"><?= $shop['description']; ?></p>
                 </div>
-                <div class="card-border">
-                    <p><?= date('d/m/Y', strtotime($shop['created_at'])); ?></p>
+                <div class="div-card-border">
+                    <p class="margin-none"><?= date('d/m/Y', strtotime($shop['created_at'])); ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
     </section>
 
-    <nav class="card-nav">
+    <nav class="flex-center margin-top">
         <?php for ($count = 1; $count <= $countPage; $count++): ?>
         
             <?php if (!isset($getId)):

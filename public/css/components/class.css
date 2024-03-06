@@ -8,6 +8,28 @@ Flash, Section, Flex
     margin-bottom: 0;
 }
 
+.div-card
+{
+    width: 21%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-card-border
+{
+    width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+
+    padding: 10px;
+    border-right: 3px solid var(--active);
+    border-left: 3px solid var(--active);
+    border-bottom: 3px solid var(--active);
+}
+
 /* Link */
 .link-menu
 {
@@ -62,24 +84,6 @@ Flash, Section, Flex
 }
 
 /* Card */
-.display-card
-{
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-
-.card
-{
-    width: 20%;
-    word-wrap: break-word;
-
-    display: flex;
-    flex-direction: column;
-}
-
 .figure-card
 {
     border: 3px solid var(--active);    
@@ -88,42 +92,9 @@ Flash, Section, Flex
 .figure-card img
 {
     width: 100%;
+    height: auto;
 
     display: flex;
-}
-
-.card-border
-{
-    height: 40px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-right: 3px solid var(--active);
-    border-left: 3px solid var(--active);
-    border-bottom: 3px solid var(--active);
-}
-
-.card-border:first-of-type
-{
-    height: 80px;
-}
-
-.card-border p
-{
-    width: 90%;
-
-    margin-bottom: 0;
-}
-
-.card-nav
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: 20px;
 }
 
 /* Lib */
@@ -180,9 +151,19 @@ Flash, Section, Flex
     margin-right: 15px;
 }
 
+.margin-top
+{
+    margin-top: 20px;
+}
+
 .margin-bottom
 {
     margin-bottom: 15px;
+}
+
+.margin-none
+{
+    margin: 0;
 }
 
 /* Flash */
@@ -220,6 +201,15 @@ Flash, Section, Flex
 .section-content
 {
     padding: 30px 0;
+}
+
+.section-card
+{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 /* Flex */
