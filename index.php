@@ -14,35 +14,36 @@ require_once "src/Controllers/ShopController.php";
 require_once "src/Controllers/AdminController.php";
 require_once "src/Controllers/ErrorController.php";
 
-// var_dump($_SESSION);
-// var_dump($_GET);
-// var_dump($paths);
-
 try
 {
+	// Empty $_GET["page"], Homepage
 	if (empty($_GET['page'])):
 		homepage();
 	endif;
 
+	// Router $_GET["page"] 
 	if (!empty($_GET['page'])):
 
-		if ($_GET['page'] === "index"):
+		// Variable(s) Environment 
+		$getPage = $_GET['page'];
+
+		if ($getPage === "index"):
 			homepage();
 		endif;
 
-		if ($_GET['page'] === "register" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "register" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			register();
 		endif;
 
-		if ($_GET['page'] === "login" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "login" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			login();
 		endif;
 
-		if ($_GET['page'] === "logout" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "logout" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			logout();
 		endif;
 
-		if ($_GET['page'] === "shop" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "shop" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 
 			if (!empty($_GET['id'])):
 
@@ -58,53 +59,54 @@ try
 			endif;
 		endif;
 
-		if ($_GET['page'] === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			contact();
 		endif;
 
-		if ($_GET['page'] === "upload" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "upload" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			upload();
 		endif;
 
-		if ($_GET['page'] === "profile" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "profile" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
 			profile();
 		endif;
 
-		if ($_GET['page'] === "rotate"):
+		if ($getPage === "rotate"):
 			require_once "src/script/rotate.php";
 			rotate();
 		endif;
 
-		if ($_GET['page'] === "resize"):
+		if ($getPage === "resize"):
 			require_once "src/script/resize.php";
 			resize();
 		endif;
 
-		if ($_GET['page'] === "crop"):
+		if ($getPage === "crop"):
 			require_once "src/script/crop.php";
 			crop();
 		endif;
 
-		if ($_GET['page'] === "flip"):
+		if ($getPage === "flip"):
 			require_once "src/script/flip.php";
 			flip();
 		endif;
 
-		if ($_GET['page'] === "wm"):
+		if ($getPage === "wm"):
 			require_once "src/script/wm.php";
 			wm();
 		endif;
 		
-		if (!in_array($_GET['page'], $paths["page"]) && !in_array($_GET['page'], $paths["admin"])):
+		if (!in_array($getPage, $paths["page"]) && !in_array($getPage, $paths["admin"])):
 			header("Location: ./");
 		endif;
 
-		if (in_array($_GET['page'], $paths["admin"]) && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
-			if ($_GET['page'] === "admin"):
+		// Router Admin
+		if (in_array($getPage, $paths["admin"]) && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
+			if ($getPage === "admin"):
 				admin();
 			endif;
 
-			if ($_GET['page'] === "contacts"):
+			if ($getPage === "contacts"):
 				if (!empty($_GET['id'])):
 					$getId = $_GET['id'];
 					contactId($getId);
@@ -113,17 +115,18 @@ try
 				endif;
 			endif;
 
-			if ($_GET['page'] === "mcontacts"):
+			if ($getPage === "mcontacts"):
 				$getId = $_GET['id'];
 				contactUpdate($getId);
 			endif;
 
-			if ($_GET['page'] === "dcontacts"):
+			if ($getPage === "dcontacts"):
 				$id = $_GET['id'];
 				require_once "src/script/delete.php";
 				contactDelete($id);
 			endif;
 		endif;
+
 	endif;
 }
 
