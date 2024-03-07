@@ -1,5 +1,5 @@
 /* Sumary (CTRL + F)
-Flash, Section, Article, Div, Flex
+Margin, Flash, Section, Article, Div, Flex
 */
 
 /* Generic */
@@ -198,7 +198,7 @@ Flash, Section, Article, Div, Flex
     align-items: center;
 }
 
-.div-card-border
+.div-card-content
 {
     width: 100%;
     height: auto;

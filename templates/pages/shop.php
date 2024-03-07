@@ -11,10 +11,10 @@
                 <figure class="figure-card">
                     <img src="<?= isset($_GET['id']) ? '../' : null; ?>public/images/shop/<?= $shop['name'].".".$shop['extension']; ?>">
                 </figure>
-                <div class="div-card-border">
+                <div class="div-card-content">
                     <p class="margin-none"><?= $shop['description']; ?></p>
                 </div>
-                <div class="div-card-border">
+                <div class="div-card-content">
                     <p class="margin-none"><?= date('d/m/Y', strtotime($shop['created_at'])); ?></p>
                 </div>
             </div>
