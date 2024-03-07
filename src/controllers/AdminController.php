@@ -10,14 +10,14 @@ function contacts()
 {
 	$contacts = getContacts();
 
-	require('templates/pages/admin/contacts.php');
+	require('templates/pages/admin/contacts/contacts.php');
 }
 
 function contactId(int $getId)
 {
 	$contact = getContact($getId);
 
-	require('templates/pages/admin/contactId.php');
+	require('templates/pages/admin/contacts/contactId.php');
 }
 
 function contactUpdate(int $getId)
@@ -25,5 +25,5 @@ function contactUpdate(int $getId)
 	$contact = getContact($getId);
 	$message = updateContact();
 
-	require('templates/pages/admin/contactUpdate.php');	
+	require('templates/pages/admin/contacts/contactUpdate.php');	
 }
