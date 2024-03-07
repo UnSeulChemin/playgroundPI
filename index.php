@@ -113,12 +113,12 @@ try
 				endif;
 			endif;
 
-			if ($_GET['page'] === "mcontact"):
+			if ($_GET['page'] === "mcontacts"):
 				$getId = $_GET['id'];
 				contactUpdate($getId);
 			endif;
 
-			if ($_GET['page'] === "dcontact"):
+			if ($_GET['page'] === "dcontacts"):
 				$id = $_GET['id'];
 				require_once "src/script/delete.php";
 				contactDelete($id);

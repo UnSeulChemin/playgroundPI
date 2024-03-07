@@ -14,10 +14,10 @@
                 <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>contacts/<?= $contact['id']; ?>">Preview</a>
             </div>
             <div class="margin-bottom">
-                <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>mcontact/<?= $contact['id']; ?>">Modify</a>
+                <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>mcontacts/<?= $contact['id']; ?>">Modify</a>
             </div>
             <div>
-                <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>dcontact/<?= $contact['id']; ?>">Delete</a>
+                <a class="link-form" href="<?= isset($_GET['id']) ? '../' : null; ?>dcontacts/<?= $contact['id']; ?>">Delete</a>
             </div>
 
         </article>
