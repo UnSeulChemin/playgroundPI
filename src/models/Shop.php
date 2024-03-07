@@ -1,6 +1,6 @@
 <?php
 
-function getShop(int $getId = 1): array
+function getShops(int $getId = 1): array
 {
     require_once "src/lib/dbConnect.php";
     $database = dbConnect();

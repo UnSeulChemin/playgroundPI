@@ -3,7 +3,7 @@ require_once "src/models/Shop.php";
 
 function shop()
 {
-	$shops = getShop();
+	$shops = getShops();
     $countPage = getCount();
 
 	require('templates/pages/shop.php');
@@ -11,7 +11,7 @@ function shop()
 
 function shopPaginate(int $getId)
 {
-	$shops = getShop($getId);
+	$shops = getShops($getId);
     $countPage = getCount();
 
 	require('templates/pages/shop.php');
