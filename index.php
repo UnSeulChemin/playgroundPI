@@ -16,7 +16,7 @@ require_once "src/Controllers/ErrorController.php";
 
 // var_dump($_SESSION);
 // var_dump($_GET);
- // var_dump($paths);
+// var_dump($paths);
 
 try
 {
@@ -70,22 +70,6 @@ try
 			profile();
 		endif;
 
-		if ($_GET['page'] === "admin" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
-			admin();
-		endif;
-
-		if ($_GET['page'] === "contacts" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
-
-			if (!empty($_GET['id'])):
-
-				$getId = $_GET['id'];
-				contactId($getId);
-
-			?><?php else:
-				contacts();
-			endif;
-		endif;
-
 		if ($_GET['page'] === "rotate"):
 			require_once "src/script/rotate.php";
 			rotate();
@@ -115,7 +99,20 @@ try
 			header("Location: ./");
 		endif;
 
-		if (in_array($_GET['page'], $paths["admin"]) && verifyLoggedUser() && verifyLoggedAdmin()):
+		if (in_array($_GET['page'], $paths["admin"]) && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
+			if ($_GET['page'] === "admin"):
+				admin();
+			endif;
+
+			if ($_GET['page'] === "contacts"):
+				if (!empty($_GET['id'])):
+					$getId = $_GET['id'];
+					contactId($getId);
+				?><?php else:
+				contacts();
+				endif;
+			endif;
+
 			if ($_GET['page'] === "mcontact"):
 				$getId = $_GET['id'];
 				contactUpdate($getId);

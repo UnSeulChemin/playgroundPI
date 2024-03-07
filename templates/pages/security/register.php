@@ -1,7 +1,7 @@
 <?php $title = "Register"; ?>
 <?php ob_start(); ?>
 
-<section class="section-default">
+<section class="section-content">
 
     <h2>Register</h2>
 
