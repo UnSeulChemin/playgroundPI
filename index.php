@@ -117,14 +117,14 @@ try
 
 		if (in_array($_GET['page'], $paths["admin"]) && verifyLoggedUser() && verifyLoggedAdmin()):
 			if ($_GET['page'] === "mcontact"):
-				$id = $_GET['id'];
-				modifyContact($id);
+				$getId = $_GET['id'];
+				contactUpdate($getId);
 			endif;
 
 			if ($_GET['page'] === "dcontact"):
 				$id = $_GET['id'];
 				require_once "src/script/delete.php";
-				deleteContact($id);
+				contactDelete($id);
 			endif;
 		endif;
 	endif;

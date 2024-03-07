@@ -1,6 +1,6 @@
 <?php
 
-function deleteContact($id)
+function contactDelete($id)
 {
     require_once "src/lib/dbConnect.php";
     $database = dbConnect();

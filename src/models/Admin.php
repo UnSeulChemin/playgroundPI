@@ -20,14 +20,12 @@ function getContact(int $getId)
         exit;
     }
 
-    $id = $getId;
-
     require_once "src/lib/dbConnect.php";
     $database = dbConnect();
 
     $sql = "SELECT * FROM `contacts` WHERE `id` = :id";
     $requete = $database->prepare($sql);
-    $requete->bindValue("id", $id, PDO::PARAM_INT);
+    $requete->bindValue("id", $getId, PDO::PARAM_INT);
     $requete->execute();
 
     $contact = $requete->fetch();

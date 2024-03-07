@@ -20,10 +20,10 @@ function contactId(int $getId)
 	require('templates/pages/admin/contactId.php');
 }
 
-function modifyContact($id)
+function contactUpdate(int $getId)
 {
-	$contact = getContact($id);
+	$contact = getContact($getId);
 	$message = updateContact();
 
-	require('templates/pages/admin/modifycontact.php');	
+	require('templates/pages/admin/contactUpdate.php');	
 }
