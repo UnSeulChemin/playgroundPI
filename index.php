@@ -27,6 +27,11 @@ try
 		// Variable(s) Environment 
 		$getPage = $_GET['page'];
 
+		// Verify the Page Exist
+		if (!in_array($getPage, $paths["page"]) && !in_array($getPage, $paths["admin"])):
+			header("Location: ./");
+		endif;
+
 		// Router Visitor
 		if ($getPage === "index"):
 			homepage();
@@ -41,65 +46,39 @@ try
 		endif;
 
 		// Router User
-		if ($getPage === "logout" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
-			logout();
-		endif;
+		if (in_array($getPage, $paths["user"]) && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 
-		if ($getPage === "shop" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
-
-			if (!empty($_GET['id'])):
-
-				if ($_GET['id'] > 2):
-					header("Location: ../shop");
-				endif;
-
-				$getId = $_GET['id'];
-				shopPaginate($getId);
-
-			?><?php else:
-				shop();
+			if ($getPage === "logout"):
+				logout();
 			endif;
-		endif;
 
-		if ($getPage === "contact" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
-			contact();
-		endif;
+			if ($getPage === "shop"):
 
-		if ($getPage === "upload" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
-			upload();
-		endif;
+				if (!empty($_GET['id'])):
 
-		if ($getPage === "profile" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
-			profile();
-		endif;
+					if ($_GET['id'] > 2):
+						header("Location: ../shop");
+					endif;
 
-		if ($getPage === "rotate"):
-			require_once "src/script/rotate.php";
-			rotate();
-		endif;
+					$getId = $_GET['id'];
+					shopPaginate($getId);
 
-		if ($getPage === "resize"):
-			require_once "src/script/resize.php";
-			resize();
-		endif;
+				?><?php else:
+					shop();
+				endif;
+			endif;
 
-		if ($getPage === "crop"):
-			require_once "src/script/crop.php";
-			crop();
-		endif;
+			if ($getPage === "contact"):
+				contact();
+			endif;
 
-		if ($getPage === "flip"):
-			require_once "src/script/flip.php";
-			flip();
-		endif;
+			if ($getPage === "upload"):
+				upload();
+			endif;
 
-		if ($getPage === "wm"):
-			require_once "src/script/wm.php";
-			wm();
-		endif;
-		
-		if (!in_array($getPage, $paths["page"]) && !in_array($getPage, $paths["admin"])):
-			header("Location: ./");
+			if ($getPage === "profile"):
+				profile();
+			endif;
 		endif;
 
 		// Router Admin
@@ -127,6 +106,32 @@ try
 				require_once "src/script/delete.php";
 				contactDelete($id);
 			endif;
+		endif;
+
+		// LATER
+		if ($getPage === "rotate"):
+			require_once "src/script/rotate.php";
+			rotate();
+		endif;
+
+		if ($getPage === "resize"):
+			require_once "src/script/resize.php";
+			resize();
+		endif;
+
+		if ($getPage === "crop"):
+			require_once "src/script/crop.php";
+			crop();
+		endif;
+
+		if ($getPage === "flip"):
+			require_once "src/script/flip.php";
+			flip();
+		endif;
+
+		if ($getPage === "wm"):
+			require_once "src/script/wm.php";
+			wm();
 		endif;
 
 	endif;
