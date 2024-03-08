@@ -20,22 +20,6 @@ function emptySessionUser()
 	return true;
 }
 
-// Verify If There is a GET ID, That the Page is Allowed to Receive it
-function verifyGetId($pathsIdAllowed)
-{
-	if (!empty($_GET['id']))
-	{
-		if (!in_array($_GET['page'], $pathsIdAllowed["id"]))
-		{
-			header("Location: .././");
-			exit;
-			return false;
-		}
-	}
-
-	return true;
-}
-
 // Verify the Session exist
 function issetSessionUser()
 {
@@ -56,9 +40,8 @@ function issetSessionUser()
 	return true;
 }
 
-
-// Verify This Is a Admin
-function verifyLoggedAdmin()
+// Verify This is an Admin
+function issetSessionAdmin()
 {
 	if ($_SESSION["user"]["roles"] !== '["ROLE_ADMIN"]')
 	{
@@ -72,6 +55,22 @@ function verifyLoggedAdmin()
 		header("Location: login");
 		exit;
 		return false;
+	}
+
+	return true;
+}
+
+// Verify If There is a GET ID, That the Page is Allowed to Receive it
+function verifyGetId($pathsIdAllowed)
+{
+	if (!empty($_GET['id']))
+	{
+		if (!in_array($_GET['page'], $pathsIdAllowed["id"]))
+		{
+			header("Location: .././");
+			exit;
+			return false;
+		}
 	}
 
 	return true;

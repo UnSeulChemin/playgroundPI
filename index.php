@@ -103,7 +103,7 @@ try
 		endif;
 
 		// Router Admin
-		if (in_array($getPage, $paths["admin"]) && issetSessionUser() && verifyGetId($pathsIdAllowed) && verifyLoggedAdmin()):
+		if (in_array($getPage, $paths["admin"]) && issetSessionUser() && verifyGetId($pathsIdAllowed) && issetSessionAdmin()):
 			if ($getPage === "admin"):
 				admin();
 			endif;
