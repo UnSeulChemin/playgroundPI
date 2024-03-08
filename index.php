@@ -60,10 +60,6 @@ try
 		// Router User
 		if (in_array($getPage, $paths["user"]) && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 
-			if ($getPage === "logout"):
-				logout();
-			endif;
-
 			if ($getPage === "shop"):
 
 				if (!empty($_GET['id'])):
@@ -90,6 +86,10 @@ try
 
 			if ($getPage === "profile"):
 				profile();
+			endif;
+
+			if ($getPage === "logout"):
+				logout();
 			endif;
 
 		endif;
