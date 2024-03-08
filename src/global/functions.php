@@ -29,11 +29,8 @@ function verifyGetId($pathsIdAllowed)
 	return true;
 }
 
-
-
-
-
-function verifyLoggedUser()
+// Verify the Session exist
+function issetSessionUser()
 {
 	if (!isset($_SESSION["user"]))
 	{
@@ -51,6 +48,9 @@ function verifyLoggedUser()
 
 	return true;
 }
+
+
+
 
 function verifyLoggedAdmin()
 {

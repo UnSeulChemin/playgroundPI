@@ -41,11 +41,12 @@ try
 			login();
 		endif;
 
-		if ($getPage === "logout" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
+		// Router User
+		if ($getPage === "logout" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 			logout();
 		endif;
 
-		if ($getPage === "shop" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
+		if ($getPage === "shop" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 
 			if (!empty($_GET['id'])):
 
@@ -61,15 +62,15 @@ try
 			endif;
 		endif;
 
-		if ($getPage === "contact" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
+		if ($getPage === "contact" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 			contact();
 		endif;
 
-		if ($getPage === "upload" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
+		if ($getPage === "upload" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 			upload();
 		endif;
 
-		if ($getPage === "profile" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
+		if ($getPage === "profile" && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 			profile();
 		endif;
 
@@ -103,7 +104,7 @@ try
 		endif;
 
 		// Router Admin
-		if (in_array($getPage, $paths["admin"]) && verifyLoggedUser() && verifyGetId($pathsIdAllowed) && verifyLoggedAdmin()):
+		if (in_array($getPage, $paths["admin"]) && issetSessionUser() && verifyGetId($pathsIdAllowed) && verifyLoggedAdmin()):
 			if ($getPage === "admin"):
 				admin();
 			endif;
