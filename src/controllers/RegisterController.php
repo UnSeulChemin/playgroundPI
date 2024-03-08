@@ -5,5 +5,5 @@ function register()
 {
 	$message = registration();
 
-	require('templates/pages/security/register.php');
+	require_once "templates/pages/security/register.php";
 }

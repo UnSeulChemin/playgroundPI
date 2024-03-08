@@ -5,5 +5,5 @@ function login()
 {
 	$message = connection();
 
-	require('templates/pages/security/login.php');
+	require_once "templates/pages/security/login.php";
 }

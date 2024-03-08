@@ -2,5 +2,5 @@
 
 function profile()
 {
-	require('templates/pages/profile.php');
+	require_once "templates/pages/profile.php";
 }

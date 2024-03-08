@@ -5,5 +5,5 @@ function contact()
 {
 	$message = contactUs();
 
-	require('templates/pages/contact.php');
+	require_once "templates/pages/contact.php";
 }
