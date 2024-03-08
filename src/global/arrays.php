@@ -1,7 +1,7 @@
 <?php 
 
 // Verify Visitor Paths
-$paths["visitor"] = ["", "register", "login"];
+$paths["visitor"] = ["register", "login"];
 
 // Verify User Paths
 $paths["user"] = ["shop", "contact", "upload", "profile", "logout"];

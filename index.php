@@ -16,19 +16,25 @@ require_once "src/Controllers/ErrorController.php";
 
 try
 {
-	// Empty $_GET["page"], Homepage
+	// (IF), Index
+	if (!isset($_GET['page'])):
+		$_GET["page"] = "";
+		homepage();
+	endif;
+
+	// Homepage, Empty $_GET["page"]
 	if (empty($_GET['page'])):
 		homepage();
 	endif;
 
-	// Router $_GET["page"] 
+	// Router, $_GET["page"] 
 	if (!empty($_GET['page'])):
 
 		// Variable(s) Environment 
 		$getPage = $_GET['page'];
 
 		// Allowed Paths
-		if (!in_array($getPage, $paths["visitor"]) && !in_array($getPage, $paths["user"]) && !in_array($getPage, $paths["admin"])):
+		if (!in_array($getPage, $paths["visitor"]) && !in_array($getPage, $paths["user"]) && !in_array($getPage, $paths["admin"]) && verifyGetId($pathsIdAllowed)):
 			if (!empty($_GET['id'])):
 				header("Location: .././");
 			?><?php else:
@@ -37,16 +43,15 @@ try
 		endif;
 
 		// Router Visitor
-		if ($getPage === "index"):
-			homepage();
-		endif;
+		if (in_array($getPage, $paths["visitor"]) && emptySessionUser() && verifyGetId($pathsIdAllowed)):
 
-		if ($getPage === "register" && emptySessionUser() && verifyGetId($pathsIdAllowed)):
-			register();
-		endif;
+			if ($getPage === "register"):
+				register();
+			endif;
 
-		if ($getPage === "login" && emptySessionUser() && verifyGetId($pathsIdAllowed)):
-			login();
+			if ($getPage === "login"):
+				login();
+			endif;
 		endif;
 
 		// Router User
