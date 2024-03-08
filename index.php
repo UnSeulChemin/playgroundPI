@@ -14,6 +14,8 @@ require_once "src/Controllers/ShopController.php";
 require_once "src/Controllers/AdminController.php";
 require_once "src/Controllers/ErrorController.php";
 
+var_dump($_GET);
+
 try
 {
 	// Empty $_GET["page"], Homepage
@@ -31,19 +33,19 @@ try
 			homepage();
 		endif;
 
-		if ($getPage === "register" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "register" && emptySessionUser() && verifyGetId($pathsIdAllowed)):
 			register();
 		endif;
 
-		if ($getPage === "login" && verifyNotLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "login" && emptySessionUser() && verifyGetId($pathsIdAllowed)):
 			login();
 		endif;
 
-		if ($getPage === "logout" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "logout" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
 			logout();
 		endif;
 
-		if ($getPage === "shop" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "shop" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
 
 			if (!empty($_GET['id'])):
 
@@ -59,15 +61,15 @@ try
 			endif;
 		endif;
 
-		if ($getPage === "contact" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "contact" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
 			contact();
 		endif;
 
-		if ($getPage === "upload" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "upload" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
 			upload();
 		endif;
 
-		if ($getPage === "profile" && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed)):
+		if ($getPage === "profile" && verifyLoggedUser() && verifyGetId($pathsIdAllowed)):
 			profile();
 		endif;
 
@@ -101,7 +103,7 @@ try
 		endif;
 
 		// Router Admin
-		if (in_array($getPage, $paths["admin"]) && verifyLoggedUser() && verifyNotGetId($pathsIdAllowed) && verifyLoggedAdmin()):
+		if (in_array($getPage, $paths["admin"]) && verifyLoggedUser() && verifyGetId($pathsIdAllowed) && verifyLoggedAdmin()):
 			if ($getPage === "admin"):
 				admin();
 			endif;

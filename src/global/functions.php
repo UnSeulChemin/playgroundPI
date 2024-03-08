@@ -1,6 +1,7 @@
 <?php
 
-function verifyNotLoggedUser()
+// Verify the Session is empty
+function emptySessionUser()
 {
 	if (isset($_SESSION["user"]))
 	{
@@ -11,6 +12,26 @@ function verifyNotLoggedUser()
 
 	return true;
 }
+
+// Verify If There is a GET ID, That the Page is Allowed to Receive it
+function verifyGetId($pathsIdAllowed)
+{
+	if (!empty($_GET['id']))
+	{
+		if (!in_array($_GET['page'], $pathsIdAllowed["id"]))
+		{
+			header("Location: .././");
+			exit;
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+
 
 function verifyLoggedUser()
 {
@@ -26,21 +47,6 @@ function verifyLoggedUser()
 		header("Location: login");
 		exit;
 		return false;
-	}
-
-	return true;
-}
-
-function verifyNotGetId($pathsIdAllowed)
-{
-	if (!empty($_GET['id']))
-	{
-		if (!in_array($_GET['page'], $pathsIdAllowed["id"]))
-		{
-			header("Location: .././");
-			exit;
-			return false;
-		}
 	}
 
 	return true;
