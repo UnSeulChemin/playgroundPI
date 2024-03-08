@@ -35,11 +35,13 @@ try
 
 		// Allowed Paths
 		if (!in_array($getPage, $paths["visitor"]) && !in_array($getPage, $paths["user"]) && !in_array($getPage, $paths["admin"]) && verifyGetId($pathsIdAllowed)):
+			
 			if (!empty($_GET['id'])):
 				header("Location: .././");
 			?><?php else:
 				header("Location: ./");
 			endif;
+
 		endif;
 
 		// Router Visitor
@@ -52,6 +54,7 @@ try
 			if ($getPage === "login"):
 				login();
 			endif;
+
 		endif;
 
 		// Router User
@@ -88,10 +91,12 @@ try
 			if ($getPage === "profile"):
 				profile();
 			endif;
+
 		endif;
 
 		// Router Admin
 		if (in_array($getPage, $paths["admin"]) && issetSessionUser() && issetSessionAdmin() && verifyGetId($pathsIdAllowed)):
+
 			if ($getPage === "admin"):
 				admin();
 			endif;
@@ -115,6 +120,7 @@ try
 				require_once "src/script/delete.php";
 				contactDelete($id);
 			endif;
+
 		endif;
 
 		// LATER
