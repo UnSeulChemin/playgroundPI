@@ -27,9 +27,13 @@ try
 		// Variable(s) Environment 
 		$getPage = $_GET['page'];
 
-		// Verify the Page Exist
-		if (!in_array($getPage, $paths["page"]) && !in_array($getPage, $paths["admin"])):
-			header("Location: ./");
+		// Allowed Paths
+		if (!in_array($getPage, $paths["visitor"]) && !in_array($getPage, $paths["user"]) && !in_array($getPage, $paths["admin"])):
+			if (!empty($_GET['id'])):
+				header("Location: .././");
+			?><?php else:
+				header("Location: ./");
+			endif;
 		endif;
 
 		// Router Visitor
@@ -82,7 +86,7 @@ try
 		endif;
 
 		// Router Admin
-		if (in_array($getPage, $paths["admin"]) && issetSessionUser() && verifyGetId($pathsIdAllowed) && issetSessionAdmin()):
+		if (in_array($getPage, $paths["admin"]) && issetSessionUser() && issetSessionAdmin() && verifyGetId($pathsIdAllowed)):
 			if ($getPage === "admin"):
 				admin();
 			endif;

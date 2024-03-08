@@ -1,12 +1,12 @@
 <?php 
 
-// Verify Visitor Path
-$paths["page"] = ["", "register", "login"];
+// Verify Visitor Paths
+$paths["visitor"] = ["", "register", "login"];
 
-// Verify User Path
+// Verify User Paths
 $paths["user"] = ["shop", "contact", "upload", "profile", "logout"];
 
-// Verify Admin Path
+// Verify Admin Paths
 $paths["admin"] = ["admin", "contacts", "mcontacts", "dcontacts"];
 
 // Allow a few Pages Able to get a GET ID
