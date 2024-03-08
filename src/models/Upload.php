@@ -24,22 +24,15 @@ function uploader()
                 return $message;
             }
         
-            if ($filesize > 1024 * 1024) // 1 MO
+            if ($filesize > 1024 * 1024)
             {
                 $message = "File too large.";
                 return $message;
             }
         
-            $newname = md5(uniqid()); // Generate unique name
-        
+            $newname = md5(uniqid());
             $newfilename = "public/images/upload/$newname.$extension";    
 
-            // Prend le nom du fichier " $newname.$extension " et on le stock
-            // Supprimer le fichier / une image " unlink(__DIR__/upload/dfjfjfnj.svg); "
-            // MAJ d'un avatar, ancien nom en base de données, on le récupere puis unlink();, 
-            // puis move_uploaded_file sur le nouveau. DONE
-            // ou on garde le meme nom puis puis move_uploaded_file apres le unlink
-        
             if (!move_uploaded_file($_FILES["image"]["tmp_name"], $newfilename))
             {
                 $message = "Upload failed.";
@@ -48,12 +41,12 @@ function uploader()
 
             chmod($newfilename, 0644);
 
-            $_SESSION["validate"] = "Success.";
+            $_SESSION["validate"] = "Upload success.";
         }
 
         else
         {
-            $message = "The uploder is incomplete.";
+            $message = "Upload failed.";
             return $message;
         }
     }
