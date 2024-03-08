@@ -45,7 +45,7 @@ try
 		endif;
 
 		// Router Visitor
-		if (in_array($getPage, $paths["visitor"]) && emptySessionUser() && verifyGetId($pathsIdAllowed)):
+		if (in_array($getPage, $paths["visitor"]) && emptySession() && verifyGetId($pathsIdAllowed)):
 
 			if ($getPage === "register"):
 				register();
