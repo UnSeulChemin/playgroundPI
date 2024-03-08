@@ -5,5 +5,5 @@ function upload()
 {
 	$message = uploader();
 
-	require('templates/pages/upload.php');
+	require_once "templates/pages/upload.php";
 }

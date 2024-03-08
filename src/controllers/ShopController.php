@@ -6,7 +6,7 @@ function shop()
 	$shops = getShops();
     $countPage = getCount();
 
-	require('templates/pages/shop.php');
+	require_once "templates/pages/shop.php";
 }
 
 function shopPaginate(int $getId)
@@ -14,5 +14,5 @@ function shopPaginate(int $getId)
 	$shops = getShops($getId);
     $countPage = getCount();
 
-	require('templates/pages/shop.php');
+	require_once "templates/pages/shop.php";
 }
