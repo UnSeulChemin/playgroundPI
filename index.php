@@ -14,8 +14,6 @@ require_once "src/Controllers/ShopController.php";
 require_once "src/Controllers/AdminController.php";
 require_once "src/Controllers/ErrorController.php";
 
-var_dump($_GET);
-
 try
 {
 	// Empty $_GET["page"], Homepage
@@ -29,6 +27,7 @@ try
 		// Variable(s) Environment 
 		$getPage = $_GET['page'];
 
+		// Router Visitor
 		if ($getPage === "index"):
 			homepage();
 		endif;

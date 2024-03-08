@@ -5,6 +5,13 @@ function emptySessionUser()
 {
 	if (isset($_SESSION["user"]))
 	{
+		if (!empty($_GET['id']))
+		{
+			header("Location: .././");
+			exit;
+			return false;
+		}
+
 		header("Location: ./");
         exit;
 		return false;
@@ -50,8 +57,7 @@ function issetSessionUser()
 }
 
 
-
-
+// Verify This Is a Admin
 function verifyLoggedAdmin()
 {
 	if ($_SESSION["user"]["roles"] !== '["ROLE_ADMIN"]')
