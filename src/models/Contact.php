@@ -29,7 +29,7 @@ function contactUs()
     
         else
         {
-            $message = "The form is incomplete.";
+            $message = "Contact failed.";
             return $message;
         }
     }

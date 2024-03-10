@@ -54,7 +54,7 @@ function connection()
 
         else
         {
-            $message = "Form Incorrect.";
+            $message = "Login failed.";
             return $message;
         }
     }
