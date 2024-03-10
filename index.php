@@ -121,32 +121,35 @@ try
 				contactDelete($id);
 			endif;
 
-		endif;
+			if ($getPage === "tools"):
+				tools();
+			endif;
 
-		// LATER
-		if ($getPage === "rotate"):
-			require_once "src/script/rotate.php";
-			rotate();
-		endif;
+			if ($getPage === "tresize"):
+				require_once "src/script/resize.php";
+				resize();
+			endif;
 
-		if ($getPage === "resize"):
-			require_once "src/script/resize.php";
-			resize();
-		endif;
+			if ($getPage === "trotate"):
+				require_once "src/script/rotate.php";
+				rotate();
+			endif;
+	
+			if ($getPage === "tcrop"):
+				require_once "src/script/crop.php";
+				crop();
+			endif;
+	
+			if ($getPage === "tflip"):
+				require_once "src/script/flip.php";
+				flip();
+			endif;
+	
+			if ($getPage === "twm"):
+				require_once "src/script/wm.php";
+				wm();
+			endif;
 
-		if ($getPage === "crop"):
-			require_once "src/script/crop.php";
-			crop();
-		endif;
-
-		if ($getPage === "flip"):
-			require_once "src/script/flip.php";
-			flip();
-		endif;
-
-		if ($getPage === "wm"):
-			require_once "src/script/wm.php";
-			wm();
 		endif;
 
 	endif;

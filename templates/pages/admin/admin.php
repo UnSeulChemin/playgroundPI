@@ -8,7 +8,7 @@
     <nav class="flex-center">
         <ul class="flex">
             <li class="margin-right-li"><a class="link-menu" href="contacts">Contacts</a></li>
-            <li><a class="link-menu" href="uploads">Uploads</a></li>
+            <li class="margin-right-li"><a class="link-menu" href="tools">Tools</a></li>
         </ul>
     </nav>
 

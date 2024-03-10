@@ -27,3 +27,8 @@ function contactUpdate(int $getId)
 
 	require_once "templates/pages/admin/contacts/contactUpdate.php";	
 }
+
+function tools()
+{
+	require_once "templates/pages/admin/tools/tools.php";
+}

@@ -43,4 +43,6 @@ function rotate()
     
     // On détruit les images dans la mémoire
     imagedestroy($nouvelleImage);
+
+    header("Location: tools");
 }

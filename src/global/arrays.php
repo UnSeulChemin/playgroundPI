@@ -7,7 +7,7 @@ $paths["visitor"] = ["register", "login"];
 $paths["user"] = ["shop", "contact", "upload", "profile", "logout"];
 
 // Verify Admin Paths
-$paths["admin"] = ["admin", "contacts", "mcontacts", "dcontacts"];
+$paths["admin"] = ["admin", "contacts", "mcontacts", "dcontacts", "tools", "tresize", "trotate", "tcrop", "tflip", "twm"];
 
 // Allow a few Pages Able to get a GET ID
 $pathsIdAllowed["id"] = ["shop", "contacts", "mcontacts", "dcontacts"];

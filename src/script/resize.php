@@ -63,4 +63,6 @@ function resize()
     // On détruit les images dans la mémoire
     imagedestroy($imageSource);
     imagedestroy($nouvelleImage);
+
+    header("Location: tools");
 }
