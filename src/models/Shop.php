@@ -6,7 +6,6 @@ function getShops(int $getId = 1): array
     $database = dbConnect();
 
 	$eachPerPage = 8;
-
 	$start = ($getId -1) * $eachPerPage;
 
     $sql = "SELECT * FROM `shop` ORDER BY `id` DESC LIMIT " . $start . ", " . $eachPerPage;
@@ -16,11 +15,11 @@ function getShops(int $getId = 1): array
     while ($row = $requete->fetch())
     {
         $shop = [
-            'id' => $row['id'],
-            'name' => $row['name'],
-            'extension' => $row['extension'],
-            'description' => $row['description'],
-            'created_at' => $row['created_at']
+            "id" => $row["id"],
+            "name" => $row["name"],
+            "extension" => $row["extension"],
+            "description" => $row["description"],
+            "created_at" => $row["created_at"]
         ];
 
         $shops[] = $shop;
@@ -43,7 +42,7 @@ function getCount()
 	}
 
 	$eachPerPage = 8;
-	$countPage = ceil($countTotal['count'] / $eachPerPage);
+	$countPage = ceil($countTotal["count"] / $eachPerPage);
 
     return $countPage;
 }

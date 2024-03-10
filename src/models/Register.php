@@ -12,19 +12,19 @@ function registration()
     
             if (strlen($name) < 5)
             {
-                $message = "The name is too short.";
+                $message = "Name too short.";
                 return $message;
             }
 
             if (strlen($name) > 12)
             {
-                $message = "The name is too long.";
+                $message = "Name too long.";
                 return $message;
             }
     
             if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
             {
-                $message = "The email address is incorrect.";
+                $message = "Incorrect email format.";
                 return $message;
             }
 
