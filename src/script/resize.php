@@ -64,5 +64,6 @@ function resize()
     imagedestroy($imageSource);
     imagedestroy($nouvelleImage);
 
+    $_SESSION["validate"] = "Success.";
     header("Location: tools");
 }

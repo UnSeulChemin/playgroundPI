@@ -63,5 +63,8 @@ function wm()
     
     // On détruit les images dans la mémoire
     imagedestroy($imageSource);
-    imagedestroy($logo);    
+    imagedestroy($logo);
+
+    $_SESSION["validate"] = "Success.";
+    header("Location: tools");
 }

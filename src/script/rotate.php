@@ -44,5 +44,6 @@ function rotate()
     // On détruit les images dans la mémoire
     imagedestroy($nouvelleImage);
 
+    $_SESSION["validate"] = "Success.";
     header("Location: tools");
 }

@@ -42,5 +42,8 @@ function flip()
     }
     
     // On détruit les images dans la mémoire
-    imagedestroy($imageSource);    
+    imagedestroy($imageSource);
+
+    $_SESSION["validate"] = "Success.";
+    header("Location: tools");
 }
