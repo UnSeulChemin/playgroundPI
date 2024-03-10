@@ -1,6 +1,6 @@
 <?php
 
-function getContacts()
+function getContacts(): array
 {
     require_once "src/lib/dbConnect.php";
     $database = dbConnect();
@@ -12,7 +12,7 @@ function getContacts()
     return $contacts;
 }
 
-function getContact(int $getId)
+function getContact(int $getId): array
 {
     if(!isset($getId) || empty($getId))
     {
@@ -70,7 +70,7 @@ function updateContact()
     
         else
         {
-            $message = "The form is incomplete.";
+            $message = "Contact failed.";
             return $message;
         }
     }
