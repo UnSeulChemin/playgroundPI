@@ -3,14 +3,9 @@
 function wm()
 {
     $fichier = "default.jpg";
-    
     $image = "public/images/script/$fichier";
     
-    // On récupére les infos de l'image
     $infos = getimagesize($image);
-    
-    $largeur = $infos[0];
-    $hauteur = $infos[1]; 
     
     switch ($infos["mime"])
     {

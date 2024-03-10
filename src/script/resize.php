@@ -3,10 +3,8 @@
 function resize()
 {
     $fichier = "default.jpg";
-
     $image = "public/images/script/$fichier";
-    
-    // On récupére les infos de l'image
+
     $infos = getimagesize($image);
     
     $largeur = $infos[0];
@@ -28,7 +26,7 @@ function resize()
             break;
         
         default:
-            die("Format d'image incorrect");
+            die("Incorrect file format.");
     }
     
     // On copie toute l'image source dans l'image destination en la réduisant

@@ -3,10 +3,8 @@
 function flip()
 {
     $fichier = "default.jpg";
-    
     $image = "public/images/script/$fichier";
-    
-    // On récupére les infos de l'image
+
     $infos = getimagesize($image);
     
     switch ($infos["mime"])
