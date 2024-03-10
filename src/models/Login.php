@@ -10,7 +10,7 @@ function connection()
 
             if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
             {
-                $message = "The email address is incorrect.";
+                $message = "Email already taken.";
                 return $message;
             }
 
@@ -28,13 +28,13 @@ function connection()
 
                 if (!$user)
                 {
-                    $message = "The user and / or password is incorrect";
+                    $message = "User and / or password incorrect.";
                     return $message;
                 }
 
                 if(!password_verify($_POST["password"], $user["password"]))
                 {
-                    $message = "The user and / or password is incorrect";
+                    $message = "User and / or password incorrect.";
                     return $message;
                 }
 
@@ -54,7 +54,7 @@ function connection()
 
         else
         {
-            $message = "The form is incomplete.";
+            $message = "Form Incorrect.";
             return $message;
         }
     }

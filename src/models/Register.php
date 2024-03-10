@@ -77,7 +77,7 @@ function registration()
     
         else
         {
-            $message = "The form is incomplete.";
+            $message = "Form Incorrect.";
             return $message;
         }
     }    
