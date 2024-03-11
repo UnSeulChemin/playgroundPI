@@ -16,32 +16,30 @@ require_once "src/Controllers/ErrorController.php";
 
 try
 {
-	// (IF), Index
-	if (!isset($_GET['page'])):
+	// (IF) case: Index
+	if (!isset($_GET["page"])):
 		$_GET["page"] = "";
 		homepage();
 	endif;
 
 	// Homepage, Empty $_GET["page"]
-	if (empty($_GET['page'])):
+	if (empty($_GET["page"])):
 		homepage();
 	endif;
 
 	// Router, $_GET["page"] 
 	if (!empty($_GET['page'])):
 
-		// Variable(s) Environment 
+		// Environment variables
 		$getPage = $_GET['page'];
 
 		// Allowed Paths
 		if (!in_array($getPage, $paths["visitor"]) && !in_array($getPage, $paths["user"]) && !in_array($getPage, $paths["admin"]) && verifyGetId($pathsIdAllowed)):
-			
 			if (!empty($_GET['id'])):
 				header("Location: .././");
 			?><?php else:
 				header("Location: ./");
 			endif;
-
 		endif;
 
 		// Router Visitor
@@ -61,16 +59,13 @@ try
 		if (in_array($getPage, $paths["user"]) && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 
 			if ($getPage === "shop"):
-
 				if (!empty($_GET['id'])):
-
 					if ($_GET['id'] > 2):
 						header("Location: ../shop");
 					endif;
 
 					$getId = $_GET['id'];
 					shopPaginate($getId);
-
 				?><?php else:
 					shop();
 				endif;
@@ -111,11 +106,19 @@ try
 			endif;
 
 			if ($getPage === "mcontacts"):
+				if (empty($_GET["id"]) || !isset($_GET["id"])):
+					header("Location: contacts");
+				endif;
+
 				$getId = $_GET['id'];
 				contactUpdate($getId);
 			endif;
 
 			if ($getPage === "dcontacts"):
+				if (empty($_GET["id"]) || !isset($_GET["id"])):
+					header("Location: contacts");
+				endif;
+
 				$id = $_GET['id'];
 				require_once "src/script/delete.php";
 				contactDelete($id);
