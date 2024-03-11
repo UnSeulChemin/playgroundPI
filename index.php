@@ -28,14 +28,14 @@ try
 	endif;
 
 	// Router, $_GET["page"] 
-	if (!empty($_GET['page'])):
+	if (!empty($_GET["page"])):
 
 		// Environment variables
-		$getPage = $_GET['page'];
+		$getPage = $_GET["page"];
 
 		// Allowed Paths
 		if (!in_array($getPage, $paths["visitor"]) && !in_array($getPage, $paths["user"]) && !in_array($getPage, $paths["admin"]) && verifyGetId($pathsIdAllowed)):
-			if (!empty($_GET['id'])):
+			if (!empty($_GET["id"])):
 				header("Location: .././");
 			?><?php else:
 				header("Location: ./");
@@ -59,12 +59,12 @@ try
 		if (in_array($getPage, $paths["user"]) && issetSessionUser() && verifyGetId($pathsIdAllowed)):
 
 			if ($getPage === "shop"):
-				if (!empty($_GET['id'])):
-					if ($_GET['id'] > 2):
+				if (!empty($_GET["id"])):
+					if ($_GET["id"] > 2):
 						header("Location: ../shop");
 					endif;
 
-					$getId = $_GET['id'];
+					$getId = $_GET["id"];
 					shopPaginate($getId);
 				?><?php else:
 					shop();
@@ -97,8 +97,8 @@ try
 			endif;
 
 			if ($getPage === "contacts"):
-				if (!empty($_GET['id'])):
-					$getId = $_GET['id'];
+				if (!empty($_GET["id"])):
+					$getId = $_GET["id"];
 					contactId($getId);
 				?><?php else:
 				contacts();
@@ -110,7 +110,7 @@ try
 					header("Location: contacts");
 				endif;
 
-				$getId = $_GET['id'];
+				$getId = $_GET["id"];
 				contactUpdate($getId);
 			endif;
 
@@ -119,7 +119,7 @@ try
 					header("Location: contacts");
 				endif;
 
-				$id = $_GET['id'];
+				$id = $_GET["id"];
 				require_once "src/script/delete.php";
 				contactDelete($id);
 			endif;
