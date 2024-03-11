@@ -12,4 +12,4 @@
 </section>
 
 <?php $content = ob_get_clean(); ?>
-<?php require_once('templates/base.php') ?>
+<?php require_once "templates/base.php"; ?>

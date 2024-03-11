@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<?php require_once('_partials/_header.php'); ?>
+<?php require_once "_partials/_header.php"; ?>
 <main><?php echo $content; ?></main>
 
 </body>
