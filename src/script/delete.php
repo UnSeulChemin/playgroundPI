@@ -8,17 +8,16 @@ function contactDelete($id)
     $sql = "DELETE FROM `contacts` WHERE `id` = :id";
     $requete = $database->prepare($sql);
     $requete->bindValue("id", $id, PDO::PARAM_INT);
-    $requete->execute();
 
-    if (!$requete)
+    if (!$requete->execute())
     {
         http_response_code(404);
         throw new Exception("Request Failed.");
     }
 
-    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] != "")
+    if (isset($_SERVER["HTTP_REFERER"]) && $_SERVER["HTTP_REFERER"] != "")
     {
-        $url = $_SERVER['HTTP_REFERER'];
+        $url = $_SERVER["HTTP_REFERER"];
     }
     
     else
