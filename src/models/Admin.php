@@ -33,7 +33,7 @@ function getContact(int $getId): array
     if (!$contact)
     {
         http_response_code(404);
-        throw new Exception("Incorrect contact");
+        throw new Exception("Incorrect contact.");
     }
 
     return $contact;
