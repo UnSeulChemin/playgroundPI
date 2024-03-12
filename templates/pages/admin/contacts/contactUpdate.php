@@ -13,10 +13,10 @@
 
     <form method="post">
         <div>
-            <input type="text" name="title" value="<?= strip_tags($contact['title']); ?>" autofocus>
+            <input type="text" name="title" value="<?= strip_tags($contact["title"]); ?>" autofocus>
         </div>
         <div>
-            <input type="text" name="content" value="<?= strip_tags($contact['content']); ?>">
+            <input type="text" name="content" value="<?= strip_tags($contact["content"]); ?>">
         </div>
         <button class="link-form" type="submit">Validate</button>
     </form>
@@ -24,4 +24,4 @@
 </section>
 
 <?php $content = ob_get_clean(); ?>
-<?php require('templates/base.php') ?>
+<?php require_once "templates/base.php"; ?>
